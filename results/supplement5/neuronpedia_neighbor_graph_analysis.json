@@ -1,0 +1,1423 @@
+{
+  "metadata": {
+    "source_cache": "results/supplement5/neuronpedia_neighbor_profiles_gpt2_l8_depth1.json",
+    "n_nodes": 113,
+    "n_directed_edges": 391,
+    "n_undirected_edges_thresholded": 238,
+    "threshold": 0.13,
+    "note": "No SAE training. Graph built from Neuronpedia topkCosSim fields for queried GPT-2 L8 features and depth-1 neighbors."
+  },
+  "seed_groups": {
+    "hedge_family": [
+      19139,
+      18573,
+      11969,
+      20804
+    ],
+    "parent_cluster": [
+      17487,
+      21174,
+      16152
+    ],
+    "random_l8": [
+      22561,
+      6165,
+      5977,
+      3696
+    ],
+    "controls": [
+      1803,
+      1442,
+      10666
+    ]
+  },
+  "components": [
+    {
+      "size": 50,
+      "seed_nodes": [
+        10666,
+        11969,
+        19139,
+        20804,
+        22561
+      ],
+      "seed_groups": {
+        "controls": 1,
+        "hedge_family": 3,
+        "random_l8": 1
+      },
+      "nodes": [
+        970,
+        1195,
+        2508,
+        3441,
+        3781,
+        3787,
+        3959,
+        3990,
+        4012,
+        4016,
+        4061,
+        4872,
+        7145,
+        7406,
+        7421,
+        8233,
+        8341,
+        8878,
+        8882,
+        9152,
+        9837,
+        10666,
+        11969,
+        11978,
+        12026,
+        12047,
+        12731,
+        13052,
+        13526,
+        13649,
+        13850,
+        15019,
+        15275,
+        15944,
+        16114,
+        16269,
+        16579,
+        18187,
+        18462,
+        18923,
+        19139,
+        20804,
+        20808,
+        21714,
+        21829,
+        22049,
+        22079,
+        22337,
+        22561,
+        23881
+      ]
+    },
+    {
+      "size": 11,
+      "seed_nodes": [
+        1442
+      ],
+      "seed_groups": {
+        "controls": 1
+      },
+      "nodes": [
+        1442,
+        2281,
+        3117,
+        5880,
+        8628,
+        9101,
+        12080,
+        17694,
+        18610,
+        19490,
+        21625
+      ]
+    },
+    {
+      "size": 11,
+      "seed_nodes": [
+        1803
+      ],
+      "seed_groups": {
+        "controls": 1
+      },
+      "nodes": [
+        1589,
+        1803,
+        2751,
+        5827,
+        7520,
+        10687,
+        13470,
+        13576,
+        14355,
+        23638,
+        23746
+      ]
+    },
+    {
+      "size": 11,
+      "seed_nodes": [
+        6165
+      ],
+      "seed_groups": {
+        "random_l8": 1
+      },
+      "nodes": [
+        3095,
+        5245,
+        6165,
+        13600,
+        14103,
+        15359,
+        16115,
+        16655,
+        22549,
+        23054,
+        23449
+      ]
+    },
+    {
+      "size": 11,
+      "seed_nodes": [
+        3696
+      ],
+      "seed_groups": {
+        "random_l8": 1
+      },
+      "nodes": [
+        3696,
+        5480,
+        5517,
+        5744,
+        6853,
+        13507,
+        14803,
+        15173,
+        15971,
+        21026,
+        23955
+      ]
+    },
+    {
+      "size": 11,
+      "seed_nodes": [
+        5977
+      ],
+      "seed_groups": {
+        "random_l8": 1
+      },
+      "nodes": [
+        3842,
+        4316,
+        4691,
+        5977,
+        6674,
+        8837,
+        11176,
+        11425,
+        17285,
+        20546,
+        24049
+      ]
+    },
+    {
+      "size": 8,
+      "seed_nodes": [
+        16152,
+        17487,
+        18573,
+        21174
+      ],
+      "seed_groups": {
+        "parent_cluster": 3,
+        "hedge_family": 1
+      },
+      "nodes": [
+        5970,
+        8488,
+        8683,
+        11973,
+        16152,
+        17487,
+        18573,
+        21174
+      ]
+    }
+  ],
+  "group_aggregates": [
+    {
+      "group": "hedge_family",
+      "n": 4,
+      "mean_degree": 10,
+      "mean_clustering_nonnull": 0.13727106227106228,
+      "mean_component_size": 39.5,
+      "degrees": [
+        14,
+        6,
+        13,
+        7
+      ],
+      "component_sizes": [
+        50,
+        8,
+        50,
+        50
+      ]
+    },
+    {
+      "group": "parent_cluster",
+      "n": 3,
+      "mean_degree": 2.6666666666666665,
+      "mean_clustering_nonnull": 0.7777777777777778,
+      "mean_component_size": 8,
+      "degrees": [
+        2,
+        3,
+        3
+      ],
+      "component_sizes": [
+        8,
+        8,
+        8
+      ]
+    },
+    {
+      "group": "random_l8",
+      "n": 4,
+      "mean_degree": 10,
+      "mean_clustering_nonnull": 0.22777777777777777,
+      "mean_component_size": 20.75,
+      "degrees": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "component_sizes": [
+        50,
+        11,
+        11,
+        11
+      ]
+    },
+    {
+      "group": "controls",
+      "n": 3,
+      "mean_degree": 10,
+      "mean_clustering_nonnull": 0.4666666666666667,
+      "mean_component_size": 24,
+      "degrees": [
+        10,
+        10,
+        10
+      ],
+      "component_sizes": [
+        11,
+        11,
+        50
+      ]
+    }
+  ],
+  "target_feature_rows": [
+    {
+      "feature": 1442,
+      "group": "controls",
+      "frac_nonzero": 0.0002895991007486979,
+      "max_act": 71.948486328125,
+      "explanation": "locations or cities specifically denoted as \"capital\" in the text",
+      "degree": 10,
+      "clustering": 0.4222222222222222,
+      "component_size": 11,
+      "top_neighbors": [
+        {
+          "idx": 12080,
+          "cos": 0.5815,
+          "group": "neighbor"
+        },
+        {
+          "idx": 21625,
+          "cos": 0.5249,
+          "group": "neighbor"
+        },
+        {
+          "idx": 19490,
+          "cos": 0.4498,
+          "group": "neighbor"
+        },
+        {
+          "idx": 9101,
+          "cos": 0.4116,
+          "group": "neighbor"
+        },
+        {
+          "idx": 2281,
+          "cos": 0.4013,
+          "group": "neighbor"
+        },
+        {
+          "idx": 5880,
+          "cos": 0.3927,
+          "group": "neighbor"
+        },
+        {
+          "idx": 18610,
+          "cos": 0.3428,
+          "group": "neighbor"
+        },
+        {
+          "idx": 8628,
+          "cos": 0.3298,
+          "group": "neighbor"
+        },
+        {
+          "idx": 17694,
+          "cos": 0.3226,
+          "group": "neighbor"
+        },
+        {
+          "idx": 3117,
+          "cos": 0.3221,
+          "group": "neighbor"
+        }
+      ]
+    },
+    {
+      "feature": 1803,
+      "group": "controls",
+      "frac_nonzero": 0.0003646214803059896,
+      "max_act": 46.46549224853516,
+      "explanation": "years related to future predictions or targets",
+      "degree": 10,
+      "clustering": 0.5111111111111111,
+      "component_size": 11,
+      "top_neighbors": [
+        {
+          "idx": 14355,
+          "cos": 0.5096,
+          "group": "neighbor"
+        },
+        {
+          "idx": 23746,
+          "cos": 0.5005,
+          "group": "neighbor"
+        },
+        {
+          "idx": 23638,
+          "cos": 0.4818,
+          "group": "neighbor"
+        },
+        {
+          "idx": 7520,
+          "cos": 0.4627,
+          "group": "neighbor"
+        },
+        {
+          "idx": 10687,
+          "cos": 0.4572,
+          "group": "neighbor"
+        },
+        {
+          "idx": 13470,
+          "cos": 0.4559,
+          "group": "neighbor"
+        },
+        {
+          "idx": 13576,
+          "cos": 0.4558,
+          "group": "neighbor"
+        },
+        {
+          "idx": 5827,
+          "cos": 0.4451,
+          "group": "neighbor"
+        },
+        {
+          "idx": 1589,
+          "cos": 0.4384,
+          "group": "neighbor"
+        },
+        {
+          "idx": 2751,
+          "cos": 0.4378,
+          "group": "neighbor"
+        }
+      ]
+    },
+    {
+      "feature": 3696,
+      "group": "random_l8",
+      "frac_nonzero": 0.0002768834431966146,
+      "max_act": 68.59798431396484,
+      "explanation": "mentions of the name \"Dem\" followed by other characters or words",
+      "degree": 10,
+      "clustering": 0.3111111111111111,
+      "component_size": 11,
+      "top_neighbors": [
+        {
+          "idx": 6853,
+          "cos": 0.6309,
+          "group": "neighbor"
+        },
+        {
+          "idx": 5517,
+          "cos": 0.4327,
+          "group": "neighbor"
+        },
+        {
+          "idx": 15971,
+          "cos": 0.4116,
+          "group": "neighbor"
+        },
+        {
+          "idx": 23955,
+          "cos": 0.4078,
+          "group": "neighbor"
+        },
+        {
+          "idx": 21026,
+          "cos": 0.4025,
+          "group": "neighbor"
+        },
+        {
+          "idx": 5480,
+          "cos": 0.4005,
+          "group": "neighbor"
+        },
+        {
+          "idx": 5744,
+          "cos": 0.3978,
+          "group": "neighbor"
+        },
+        {
+          "idx": 15173,
+          "cos": 0.3874,
+          "group": "neighbor"
+        },
+        {
+          "idx": 14803,
+          "cos": 0.3795,
+          "group": "neighbor"
+        },
+        {
+          "idx": 13507,
+          "cos": 0.3672,
+          "group": "neighbor"
+        }
+      ]
+    },
+    {
+      "feature": 5977,
+      "group": "random_l8",
+      "frac_nonzero": 0.0003449122111002604,
+      "max_act": 67.15467834472656,
+      "explanation": "instances of the word \"pent\" along with related words or phrases",
+      "degree": 10,
+      "clustering": 0.15555555555555556,
+      "component_size": 11,
+      "top_neighbors": [
+        {
+          "idx": 6674,
+          "cos": 0.3968,
+          "group": "neighbor"
+        },
+        {
+          "idx": 24049,
+          "cos": 0.3909,
+          "group": "neighbor"
+        },
+        {
+          "idx": 17285,
+          "cos": 0.3898,
+          "group": "neighbor"
+        },
+        {
+          "idx": 20546,
+          "cos": 0.3743,
+          "group": "neighbor"
+        },
+        {
+          "idx": 11176,
+          "cos": 0.3712,
+          "group": "neighbor"
+        },
+        {
+          "idx": 4316,
+          "cos": 0.37,
+          "group": "neighbor"
+        },
+        {
+          "idx": 11425,
+          "cos": 0.3194,
+          "group": "neighbor"
+        },
+        {
+          "idx": 3842,
+          "cos": 0.3139,
+          "group": "neighbor"
+        },
+        {
+          "idx": 8837,
+          "cos": 0.2984,
+          "group": "neighbor"
+        },
+        {
+          "idx": 4691,
+          "cos": 0.2979,
+          "group": "neighbor"
+        }
+      ]
+    },
+    {
+      "feature": 6165,
+      "group": "random_l8",
+      "frac_nonzero": 0.00091552734375,
+      "max_act": 25.8155517578125,
+      "explanation": "proper nouns, specifically the surname \"Walsh\"",
+      "degree": 10,
+      "clustering": 0.15555555555555556,
+      "component_size": 11,
+      "top_neighbors": [
+        {
+          "idx": 13600,
+          "cos": 0.2781,
+          "group": "neighbor"
+        },
+        {
+          "idx": 5245,
+          "cos": 0.2625,
+          "group": "neighbor"
+        },
+        {
+          "idx": 3095,
+          "cos": 0.2623,
+          "group": "neighbor"
+        },
+        {
+          "idx": 15359,
+          "cos": 0.2611,
+          "group": "neighbor"
+        },
+        {
+          "idx": 23054,
+          "cos": 0.2546,
+          "group": "neighbor"
+        },
+        {
+          "idx": 23449,
+          "cos": 0.2485,
+          "group": "neighbor"
+        },
+        {
+          "idx": 16115,
+          "cos": 0.2423,
+          "group": "neighbor"
+        },
+        {
+          "idx": 22549,
+          "cos": 0.2398,
+          "group": "neighbor"
+        },
+        {
+          "idx": 14103,
+          "cos": 0.2393,
+          "group": "neighbor"
+        },
+        {
+          "idx": 16655,
+          "cos": 0.2359,
+          "group": "neighbor"
+        }
+      ]
+    },
+    {
+      "feature": 10666,
+      "group": "controls",
+      "frac_nonzero": 0.0006621678670247396,
+      "max_act": 35.05573654174805,
+      "explanation": "expressions of admiration or appreciation",
+      "degree": 10,
+      "clustering": 0.4666666666666667,
+      "component_size": 50,
+      "top_neighbors": [
+        {
+          "idx": 11978,
+          "cos": 0.6431,
+          "group": "neighbor"
+        },
+        {
+          "idx": 22337,
+          "cos": 0.5983,
+          "group": "neighbor"
+        },
+        {
+          "idx": 3959,
+          "cos": 0.5623,
+          "group": "neighbor"
+        },
+        {
+          "idx": 16269,
+          "cos": 0.4965,
+          "group": "neighbor"
+        },
+        {
+          "idx": 9837,
+          "cos": 0.466,
+          "group": "neighbor"
+        },
+        {
+          "idx": 15275,
+          "cos": 0.4438,
+          "group": "neighbor"
+        },
+        {
+          "idx": 18462,
+          "cos": 0.4338,
+          "group": "neighbor"
+        },
+        {
+          "idx": 13052,
+          "cos": 0.4331,
+          "group": "neighbor"
+        },
+        {
+          "idx": 12026,
+          "cos": 0.3836,
+          "group": "neighbor"
+        },
+        {
+          "idx": 18187,
+          "cos": 0.3811,
+          "group": "neighbor"
+        }
+      ]
+    },
+    {
+      "feature": 11969,
+      "group": "hedge_family",
+      "frac_nonzero": 0,
+      "max_act": 0,
+      "explanation": "",
+      "degree": 13,
+      "clustering": 0.19230769230769232,
+      "component_size": 50,
+      "top_neighbors": [
+        {
+          "idx": 19139,
+          "cos": 0.8423,
+          "group": "hedge_family"
+        },
+        {
+          "idx": 15019,
+          "cos": 0.1642,
+          "group": "neighbor"
+        },
+        {
+          "idx": 7145,
+          "cos": 0.1567,
+          "group": "neighbor"
+        },
+        {
+          "idx": 16114,
+          "cos": 0.1532,
+          "group": "neighbor"
+        },
+        {
+          "idx": 3787,
+          "cos": 0.1531,
+          "group": "neighbor"
+        },
+        {
+          "idx": 7421,
+          "cos": 0.1493,
+          "group": "neighbor"
+        },
+        {
+          "idx": 2508,
+          "cos": 0.1492,
+          "group": "neighbor"
+        },
+        {
+          "idx": 22049,
+          "cos": 0.1444,
+          "group": "neighbor"
+        },
+        {
+          "idx": 18923,
+          "cos": 0.1417,
+          "group": "neighbor"
+        },
+        {
+          "idx": 8878,
+          "cos": 0.1415,
+          "group": "neighbor"
+        }
+      ]
+    },
+    {
+      "feature": 16152,
+      "group": "parent_cluster",
+      "frac_nonzero": 0,
+      "max_act": 0,
+      "explanation": "",
+      "degree": 3,
+      "clustering": 0.6666666666666666,
+      "component_size": 8,
+      "top_neighbors": [
+        {
+          "idx": 21174,
+          "cos": 0.9385,
+          "group": "parent_cluster"
+        },
+        {
+          "idx": 17487,
+          "cos": 0.6712,
+          "group": "parent_cluster"
+        },
+        {
+          "idx": 18573,
+          "cos": 0.2236,
+          "group": "hedge_family"
+        }
+      ]
+    },
+    {
+      "feature": 17487,
+      "group": "parent_cluster",
+      "frac_nonzero": 0,
+      "max_act": 0,
+      "explanation": "",
+      "degree": 2,
+      "clustering": 1.0,
+      "component_size": 8,
+      "top_neighbors": [
+        {
+          "idx": 21174,
+          "cos": 0.6954,
+          "group": "parent_cluster"
+        },
+        {
+          "idx": 16152,
+          "cos": 0.6712,
+          "group": "parent_cluster"
+        }
+      ]
+    },
+    {
+      "feature": 18573,
+      "group": "hedge_family",
+      "frac_nonzero": 0,
+      "max_act": 0,
+      "explanation": "",
+      "degree": 6,
+      "clustering": 0.13333333333333333,
+      "component_size": 8,
+      "top_neighbors": [
+        {
+          "idx": 16152,
+          "cos": 0.2236,
+          "group": "parent_cluster"
+        },
+        {
+          "idx": 21174,
+          "cos": 0.1577,
+          "group": "parent_cluster"
+        },
+        {
+          "idx": 8488,
+          "cos": 0.1421,
+          "group": "neighbor"
+        },
+        {
+          "idx": 5970,
+          "cos": 0.1383,
+          "group": "neighbor"
+        },
+        {
+          "idx": 8683,
+          "cos": 0.1369,
+          "group": "neighbor"
+        },
+        {
+          "idx": 11973,
+          "cos": 0.1316,
+          "group": "neighbor"
+        }
+      ]
+    },
+    {
+      "feature": 19139,
+      "group": "hedge_family",
+      "frac_nonzero": 3.178914388020833e-07,
+      "max_act": 0.1837402135133743,
+      "explanation": "words related to legal or criminal actions",
+      "degree": 14,
+      "clustering": 0.17582417582417584,
+      "component_size": 50,
+      "top_neighbors": [
+        {
+          "idx": 11969,
+          "cos": 0.8423,
+          "group": "hedge_family"
+        },
+        {
+          "idx": 21829,
+          "cos": 0.1688,
+          "group": "neighbor"
+        },
+        {
+          "idx": 21714,
+          "cos": 0.1634,
+          "group": "neighbor"
+        },
+        {
+          "idx": 4872,
+          "cos": 0.1627,
+          "group": "neighbor"
+        },
+        {
+          "idx": 3441,
+          "cos": 0.1612,
+          "group": "neighbor"
+        },
+        {
+          "idx": 23881,
+          "cos": 0.1516,
+          "group": "neighbor"
+        },
+        {
+          "idx": 1195,
+          "cos": 0.1502,
+          "group": "neighbor"
+        },
+        {
+          "idx": 22079,
+          "cos": 0.1497,
+          "group": "neighbor"
+        },
+        {
+          "idx": 8882,
+          "cos": 0.1495,
+          "group": "neighbor"
+        },
+        {
+          "idx": 4016,
+          "cos": 0.1486,
+          "group": "neighbor"
+        }
+      ]
+    },
+    {
+      "feature": 20804,
+      "group": "hedge_family",
+      "frac_nonzero": 0,
+      "max_act": 0,
+      "explanation": "",
+      "degree": 7,
+      "clustering": 0.047619047619047616,
+      "component_size": 50,
+      "top_neighbors": [
+        {
+          "idx": 8341,
+          "cos": 0.1575,
+          "group": "neighbor"
+        },
+        {
+          "idx": 4061,
+          "cos": 0.1475,
+          "group": "neighbor"
+        },
+        {
+          "idx": 4012,
+          "cos": 0.1374,
+          "group": "neighbor"
+        },
+        {
+          "idx": 7406,
+          "cos": 0.136,
+          "group": "neighbor"
+        },
+        {
+          "idx": 3781,
+          "cos": 0.1324,
+          "group": "neighbor"
+        },
+        {
+          "idx": 13850,
+          "cos": 0.1312,
+          "group": "neighbor"
+        },
+        {
+          "idx": 20808,
+          "cos": 0.131,
+          "group": "neighbor"
+        }
+      ]
+    },
+    {
+      "feature": 21174,
+      "group": "parent_cluster",
+      "frac_nonzero": 0,
+      "max_act": 0,
+      "explanation": "",
+      "degree": 3,
+      "clustering": 0.6666666666666666,
+      "component_size": 8,
+      "top_neighbors": [
+        {
+          "idx": 16152,
+          "cos": 0.9385,
+          "group": "parent_cluster"
+        },
+        {
+          "idx": 17487,
+          "cos": 0.6954,
+          "group": "parent_cluster"
+        },
+        {
+          "idx": 18573,
+          "cos": 0.1577,
+          "group": "hedge_family"
+        }
+      ]
+    },
+    {
+      "feature": 22561,
+      "group": "random_l8",
+      "frac_nonzero": 0.001110712687174479,
+      "max_act": 34.48997497558594,
+      "explanation": "references to a specific individual named \"Soros\"",
+      "degree": 10,
+      "clustering": 0.28888888888888886,
+      "component_size": 50,
+      "top_neighbors": [
+        {
+          "idx": 15944,
+          "cos": 0.4413,
+          "group": "neighbor"
+        },
+        {
+          "idx": 9152,
+          "cos": 0.4183,
+          "group": "neighbor"
+        },
+        {
+          "idx": 12047,
+          "cos": 0.3909,
+          "group": "neighbor"
+        },
+        {
+          "idx": 8233,
+          "cos": 0.3839,
+          "group": "neighbor"
+        },
+        {
+          "idx": 16579,
+          "cos": 0.3699,
+          "group": "neighbor"
+        },
+        {
+          "idx": 13526,
+          "cos": 0.3596,
+          "group": "neighbor"
+        },
+        {
+          "idx": 3990,
+          "cos": 0.3582,
+          "group": "neighbor"
+        },
+        {
+          "idx": 12731,
+          "cos": 0.3551,
+          "group": "neighbor"
+        },
+        {
+          "idx": 13649,
+          "cos": 0.3532,
+          "group": "neighbor"
+        },
+        {
+          "idx": 970,
+          "cos": 0.352,
+          "group": "neighbor"
+        }
+      ]
+    }
+  ],
+  "geodesic_chord_pairs": [
+    {
+      "i": 1442,
+      "j": 1803,
+      "group_i": "controls",
+      "group_j": "controls",
+      "direct_cos_if_known": null,
+      "direct_chord_proxy_1_minus_cos": null,
+      "graph_geodesic_1_minus_cos": null,
+      "geodesic_over_chord_proxy": null,
+      "path": []
+    },
+    {
+      "i": 1442,
+      "j": 10666,
+      "group_i": "controls",
+      "group_j": "controls",
+      "direct_cos_if_known": null,
+      "direct_chord_proxy_1_minus_cos": null,
+      "graph_geodesic_1_minus_cos": null,
+      "geodesic_over_chord_proxy": null,
+      "path": []
+    },
+    {
+      "i": 1803,
+      "j": 10666,
+      "group_i": "controls",
+      "group_j": "controls",
+      "direct_cos_if_known": null,
+      "direct_chord_proxy_1_minus_cos": null,
+      "graph_geodesic_1_minus_cos": null,
+      "geodesic_over_chord_proxy": null,
+      "path": []
+    },
+    {
+      "i": 3696,
+      "j": 5977,
+      "group_i": "random_l8",
+      "group_j": "random_l8",
+      "direct_cos_if_known": null,
+      "direct_chord_proxy_1_minus_cos": null,
+      "graph_geodesic_1_minus_cos": null,
+      "geodesic_over_chord_proxy": null,
+      "path": []
+    },
+    {
+      "i": 3696,
+      "j": 6165,
+      "group_i": "random_l8",
+      "group_j": "random_l8",
+      "direct_cos_if_known": null,
+      "direct_chord_proxy_1_minus_cos": null,
+      "graph_geodesic_1_minus_cos": null,
+      "geodesic_over_chord_proxy": null,
+      "path": []
+    },
+    {
+      "i": 3696,
+      "j": 22561,
+      "group_i": "random_l8",
+      "group_j": "random_l8",
+      "direct_cos_if_known": null,
+      "direct_chord_proxy_1_minus_cos": null,
+      "graph_geodesic_1_minus_cos": null,
+      "geodesic_over_chord_proxy": null,
+      "path": []
+    },
+    {
+      "i": 5977,
+      "j": 6165,
+      "group_i": "random_l8",
+      "group_j": "random_l8",
+      "direct_cos_if_known": null,
+      "direct_chord_proxy_1_minus_cos": null,
+      "graph_geodesic_1_minus_cos": null,
+      "geodesic_over_chord_proxy": null,
+      "path": []
+    },
+    {
+      "i": 5977,
+      "j": 22561,
+      "group_i": "random_l8",
+      "group_j": "random_l8",
+      "direct_cos_if_known": null,
+      "direct_chord_proxy_1_minus_cos": null,
+      "graph_geodesic_1_minus_cos": null,
+      "geodesic_over_chord_proxy": null,
+      "path": []
+    },
+    {
+      "i": 6165,
+      "j": 22561,
+      "group_i": "random_l8",
+      "group_j": "random_l8",
+      "direct_cos_if_known": null,
+      "direct_chord_proxy_1_minus_cos": null,
+      "graph_geodesic_1_minus_cos": null,
+      "geodesic_over_chord_proxy": null,
+      "path": []
+    },
+    {
+      "i": 11969,
+      "j": 16152,
+      "group_i": "hedge_family",
+      "group_j": "parent_cluster",
+      "direct_cos_if_known": null,
+      "direct_chord_proxy_1_minus_cos": null,
+      "graph_geodesic_1_minus_cos": null,
+      "geodesic_over_chord_proxy": null,
+      "path": []
+    },
+    {
+      "i": 11969,
+      "j": 17487,
+      "group_i": "hedge_family",
+      "group_j": "parent_cluster",
+      "direct_cos_if_known": null,
+      "direct_chord_proxy_1_minus_cos": null,
+      "graph_geodesic_1_minus_cos": null,
+      "geodesic_over_chord_proxy": null,
+      "path": []
+    },
+    {
+      "i": 11969,
+      "j": 18573,
+      "group_i": "hedge_family",
+      "group_j": "hedge_family",
+      "direct_cos_if_known": null,
+      "direct_chord_proxy_1_minus_cos": null,
+      "graph_geodesic_1_minus_cos": null,
+      "geodesic_over_chord_proxy": null,
+      "path": []
+    },
+    {
+      "i": 11969,
+      "j": 19139,
+      "group_i": "hedge_family",
+      "group_j": "hedge_family",
+      "direct_cos_if_known": 0.8423,
+      "direct_chord_proxy_1_minus_cos": 0.15769999999999995,
+      "graph_geodesic_1_minus_cos": 0.15769999999999995,
+      "geodesic_over_chord_proxy": 1.0,
+      "path": [
+        11969,
+        19139
+      ]
+    },
+    {
+      "i": 11969,
+      "j": 20804,
+      "group_i": "hedge_family",
+      "group_j": "hedge_family",
+      "direct_cos_if_known": null,
+      "direct_chord_proxy_1_minus_cos": null,
+      "graph_geodesic_1_minus_cos": 2.4111000000000002,
+      "geodesic_over_chord_proxy": null,
+      "path": [
+        11969,
+        21714,
+        4012,
+        20804
+      ]
+    },
+    {
+      "i": 11969,
+      "j": 21174,
+      "group_i": "hedge_family",
+      "group_j": "parent_cluster",
+      "direct_cos_if_known": null,
+      "direct_chord_proxy_1_minus_cos": null,
+      "graph_geodesic_1_minus_cos": null,
+      "geodesic_over_chord_proxy": null,
+      "path": []
+    },
+    {
+      "i": 16152,
+      "j": 17487,
+      "group_i": "parent_cluster",
+      "group_j": "parent_cluster",
+      "direct_cos_if_known": 0.6712,
+      "direct_chord_proxy_1_minus_cos": 0.3288,
+      "graph_geodesic_1_minus_cos": 0.3288,
+      "geodesic_over_chord_proxy": 1.0,
+      "path": [
+        16152,
+        17487
+      ]
+    },
+    {
+      "i": 16152,
+      "j": 18573,
+      "group_i": "parent_cluster",
+      "group_j": "hedge_family",
+      "direct_cos_if_known": 0.2236,
+      "direct_chord_proxy_1_minus_cos": 0.7764,
+      "graph_geodesic_1_minus_cos": 0.7764,
+      "geodesic_over_chord_proxy": 1.0,
+      "path": [
+        16152,
+        18573
+      ]
+    },
+    {
+      "i": 16152,
+      "j": 19139,
+      "group_i": "parent_cluster",
+      "group_j": "hedge_family",
+      "direct_cos_if_known": null,
+      "direct_chord_proxy_1_minus_cos": null,
+      "graph_geodesic_1_minus_cos": null,
+      "geodesic_over_chord_proxy": null,
+      "path": []
+    },
+    {
+      "i": 16152,
+      "j": 20804,
+      "group_i": "parent_cluster",
+      "group_j": "hedge_family",
+      "direct_cos_if_known": null,
+      "direct_chord_proxy_1_minus_cos": null,
+      "graph_geodesic_1_minus_cos": null,
+      "geodesic_over_chord_proxy": null,
+      "path": []
+    },
+    {
+      "i": 16152,
+      "j": 21174,
+      "group_i": "parent_cluster",
+      "group_j": "parent_cluster",
+      "direct_cos_if_known": 0.9385,
+      "direct_chord_proxy_1_minus_cos": 0.0615,
+      "graph_geodesic_1_minus_cos": 0.0615,
+      "geodesic_over_chord_proxy": 1.0,
+      "path": [
+        16152,
+        21174
+      ]
+    },
+    {
+      "i": 17487,
+      "j": 18573,
+      "group_i": "parent_cluster",
+      "group_j": "hedge_family",
+      "direct_cos_if_known": null,
+      "direct_chord_proxy_1_minus_cos": null,
+      "graph_geodesic_1_minus_cos": 1.1052,
+      "geodesic_over_chord_proxy": null,
+      "path": [
+        17487,
+        16152,
+        18573
+      ]
+    },
+    {
+      "i": 17487,
+      "j": 19139,
+      "group_i": "parent_cluster",
+      "group_j": "hedge_family",
+      "direct_cos_if_known": null,
+      "direct_chord_proxy_1_minus_cos": null,
+      "graph_geodesic_1_minus_cos": null,
+      "geodesic_over_chord_proxy": null,
+      "path": []
+    },
+    {
+      "i": 17487,
+      "j": 20804,
+      "group_i": "parent_cluster",
+      "group_j": "hedge_family",
+      "direct_cos_if_known": null,
+      "direct_chord_proxy_1_minus_cos": null,
+      "graph_geodesic_1_minus_cos": null,
+      "geodesic_over_chord_proxy": null,
+      "path": []
+    },
+    {
+      "i": 17487,
+      "j": 21174,
+      "group_i": "parent_cluster",
+      "group_j": "parent_cluster",
+      "direct_cos_if_known": 0.6954,
+      "direct_chord_proxy_1_minus_cos": 0.3046,
+      "graph_geodesic_1_minus_cos": 0.3046,
+      "geodesic_over_chord_proxy": 1.0,
+      "path": [
+        17487,
+        21174
+      ]
+    },
+    {
+      "i": 18573,
+      "j": 19139,
+      "group_i": "hedge_family",
+      "group_j": "hedge_family",
+      "direct_cos_if_known": null,
+      "direct_chord_proxy_1_minus_cos": null,
+      "graph_geodesic_1_minus_cos": null,
+      "geodesic_over_chord_proxy": null,
+      "path": []
+    },
+    {
+      "i": 18573,
+      "j": 20804,
+      "group_i": "hedge_family",
+      "group_j": "hedge_family",
+      "direct_cos_if_known": null,
+      "direct_chord_proxy_1_minus_cos": null,
+      "graph_geodesic_1_minus_cos": null,
+      "geodesic_over_chord_proxy": null,
+      "path": []
+    },
+    {
+      "i": 18573,
+      "j": 21174,
+      "group_i": "hedge_family",
+      "group_j": "parent_cluster",
+      "direct_cos_if_known": 0.1577,
+      "direct_chord_proxy_1_minus_cos": 0.8423,
+      "graph_geodesic_1_minus_cos": 0.8379,
+      "geodesic_over_chord_proxy": 0.9947762080018995,
+      "path": [
+        18573,
+        16152,
+        21174
+      ]
+    },
+    {
+      "i": 19139,
+      "j": 20804,
+      "group_i": "hedge_family",
+      "group_j": "hedge_family",
+      "direct_cos_if_known": null,
+      "direct_chord_proxy_1_minus_cos": null,
+      "graph_geodesic_1_minus_cos": 2.3840000000000003,
+      "geodesic_over_chord_proxy": null,
+      "path": [
+        19139,
+        21714,
+        4012,
+        20804
+      ]
+    },
+    {
+      "i": 19139,
+      "j": 21174,
+      "group_i": "hedge_family",
+      "group_j": "parent_cluster",
+      "direct_cos_if_known": null,
+      "direct_chord_proxy_1_minus_cos": null,
+      "graph_geodesic_1_minus_cos": null,
+      "geodesic_over_chord_proxy": null,
+      "path": []
+    },
+    {
+      "i": 20804,
+      "j": 21174,
+      "group_i": "hedge_family",
+      "group_j": "parent_cluster",
+      "direct_cos_if_known": null,
+      "direct_chord_proxy_1_minus_cos": null,
+      "graph_geodesic_1_minus_cos": null,
+      "geodesic_over_chord_proxy": null,
+      "path": []
+    }
+  ],
+  "observations": [
+    {
+      "label": "observation",
+      "claim": "Parent cluster nodes occupy component ids [6]; hedge-family nodes occupy component ids [0, 6] under threshold 0.13.",
+      "implication": "If parent and hedge nodes share/approach components this motivates local graph tests; if separated it weakens simple single-manifold story."
+    },
+    {
+      "label": "observation",
+      "claim": "F19139 and F11969 remain a very strong decoder-neighbor pair in Neuronpedia top-k data (cos≈0.8423).",
+      "implication": "Supports a structured hedge sub-neighborhood; not sufficient for H7 because ordinary feature-family clustering also predicts this."
+    },
+    {
+      "label": "observation",
+      "claim": "Parent cluster has high internal decoder-neighbor cosines where known (F21174-F16152≈0.9385; F17487 with both≈0.67-0.70).",
+      "implication": "Supports a parent cluster, already consistent with Supplement 3/4 hedge interpretation."
+    },
+    {
+      "label": "observation",
+      "claim": "F1803 has degree 10, component size 11, and top neighbors [14355, 23746, 23638, 7520, 10687].",
+      "implication": "F1803 has a local decoder neighborhood suitable for no-training follow-up, but this graph alone does not establish a temporal manifold."
+    }
+  ],
+  "conservative_conclusion": "Expanded Neuronpedia graph provides stronger descriptive evidence that hedge/parent/control features live in nontrivial local neighborhoods. It does not prove H7. The graph is a top-k decoder-neighbor proxy and must be followed by vector-based local PCA or broader API crawl before making manifold-fragmentation claims."
+}

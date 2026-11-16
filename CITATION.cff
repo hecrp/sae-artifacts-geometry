@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this code or these results, please cite them as below."
+title: "The Geometry of SAE Artifacts: Anti-Aligned Encoder-Decoder Features in Sparse Autoencoders"
+type: software
+authors:
+  - given-names: Hector
+date-released: 2026-11-15
+license: MIT
+keywords:
+  - mechanistic interpretability
+  - sparse autoencoders
+  - superposition

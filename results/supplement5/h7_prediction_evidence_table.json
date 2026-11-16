@@ -1,0 +1,68 @@
+{
+  "rows": [
+    {
+      "prediction": "P1: anti-aligned features have structured local neighborhoods, not random isolation",
+      "literature": "Goodfire neural geometry; Hindupur 2025; Supplement 3 hedge-family mechanism",
+      "observations": "Neuronpedia depth-1 graph has 113 nodes / 238 thresholded undirected edges. Hedge-family mean degree=10; F19139-F11969 decoder cosine≈0.8423. Parent cluster internal cosines≈0.67-0.94.",
+      "inference": "Structured neighborhoods exist for queried hedge/parent features.",
+      "alternatives": "Ordinary decoder feature-family clustering; dead-feature artifacts; Neuronpedia top-k bias.",
+      "status": "weak support / motivates H7, not diagnostic",
+      "next_test": "Expand neighbor crawl and compare against random anti-aligned and aligned controls."
+    },
+    {
+      "prediction": "P2: local PCA around hedge-parent clusters has intrinsic dimension > 1",
+      "literature": "Engels 2024; Modell 2025; Shafran 2026 local regions",
+      "observations": "No actual W_dec/W_enc vectors loaded in this continuation. Neuronpedia graph alone cannot estimate PCA dimension.",
+      "inference": "Untested.",
+      "alternatives": "Rank-1 local feature families; simple parent-child hedges without manifold.",
+      "status": "untested",
+      "next_test": "Load public Bloom GPT-2 L8 SAE vectors and run local PCA / participation ratio on top-k neighborhoods."
+    },
+    {
+      "prediction": "P3: geodesic graph distance differs from direct chord/cosine distance in curved neighborhoods",
+      "literature": "Goodfire manifold steering; representation manifolds; graph manifold learning",
+      "observations": "Depth-1 graph built from topkCosSim is available, but direct pairwise cosines are sparse and graph is query-biased. Several seed groups fall into separate components; largest component includes F19139/F11969/F20804, F10666, F22561.",
+      "inference": "Graph-proxy test is feasible but currently underpowered.",
+      "alternatives": "Top-k graph construction artifact; component structure from query seed choice rather than manifold.",
+      "status": "inconclusive",
+      "next_test": "Crawl neighbor graph to depth 2 with cap; compute geodesic/chord ratios only where direct cosine is available or vectors are loaded."
+    },
+    {
+      "prediction": "P4: active anti-aligned features sit in dense neighborhoods or transition regions",
+      "literature": "Goodfire SAE shattering; Shafran local geometry",
+      "observations": "Random layer-8 features [labelled 'active anti-aligned' in the original run; see ERRATA E7] F22561, F6165, F5977, F3696 each have degree≈10 in depth-1 graph. They belong to components of size 50 or 11, but semantic explanations are diverse.",
+      "inference": "Random layer-8 features [labelled 'active anti-aligned' in the original run; see ERRATA E7] are not graph-isolated in this sample.",
+      "alternatives": "Any queried Neuronpedia feature has 10 top neighbors by construction; degree alone is weak.",
+      "status": "untested: the four features examined (F22561, F6165, F5977, F3696) are random layer-8 features, not anti-aligned",
+      "next_test": "Compare component sizes/clustering to matched active aligned features and random L8 features."
+    },
+    {
+      "prediction": "P5: F1803 behaves like a coordinate/shard of temporal manifold rather than isolated scalar feature",
+      "literature": "Engels 2024 multidimensional features; Goodfire neural geometry; Wurgaft 2026 steering",
+      "observations": "COS3 cached JSON exists. PCA variance: PC1=0.3054, PC2=0.2663, PC3=0.2374, PC4=0.1908; PC2/PC1=0.872. ANOM_2023 JSON exists and supports tokenization confound.",
+      "inference": "F1803 temporal data are compatible with a multidimensional temporal manifold reading.",
+      "alternatives": "PCA over chosen prompts may reflect prompt-template/tokenization variation; F1803 may still be a specificity gate with surrounding confounds, not a manifold shard.",
+      "status": "moderate support for temporal-manifold framing; not direct support for anti-aligned H7",
+      "next_test": "Parse COS3 per-prompt coordinates, test year trajectory geometry, separate tokenization/template axes, and compare with F1803 decoder-neighbor graph."
+    },
+    {
+      "prediction": "P6: manifold-aware steering is cleaner than linear single-feature steering",
+      "literature": "Wurgaft 2026 / Goodfire manifold steering",
+      "observations": "Prior report says PC1 steering increased logit_diff by ≈+0.43, but no side-by-side linear-vs-manifold steering benchmark exists here.",
+      "inference": "Causal relevance of temporal PC1 is suggestive only.",
+      "alternatives": "PC1 may be ordinary linear direction; steering metric may not test off-manifold naturalness.",
+      "status": "untested for H7",
+      "next_test": "Define behavior-space metric and compare F1803 decoder steering, PC1 steering, and geodesic/tangent steering."
+    },
+    {
+      "prediction": "P7: Supplement 6 should only be created if H7 evidence becomes substantial",
+      "literature": "Project non-retroactivity rule; systematic phase documentation",
+      "observations": "Current outputs are preliminary graph/cached-data audits; no vector PCA, no expanded depth-2 graph, no causal steering comparison.",
+      "inference": "Enough for next-step planning and maybe a short results note; insufficient for formal Supplement 6.",
+      "alternatives": "Could write Supplement 6 as a negative/inconclusive report, but that would be premature before completing the planned no-training diagnostics.",
+      "status": "do not create Supplement 6 yet",
+      "next_test": "Complete Workstreams A-D first."
+    }
+  ],
+  "decision": "do not create Supplement 6 yet; complete no-training diagnostics first"
+}

@@ -1,0 +1,541 @@
+{
+  "metadata": {
+    "source": "existing Neuronpedia JSON only; no new SAE training",
+    "created_by": "Hermes",
+    "status": "preliminary H7 audit, not proof"
+  },
+  "family_summaries": [
+    {
+      "family": "hedge_family",
+      "nodes": [
+        19139,
+        18573,
+        11969,
+        20804
+      ],
+      "n_pairwise_known": 1,
+      "mean_known_cos": 0.8423,
+      "max_known_cos": 0.8423,
+      "min_known_cos": 0.8423,
+      "known_pairs": [
+        {
+          "i": 19139,
+          "j": 11969,
+          "cos": 0.8423
+        }
+      ]
+    },
+    {
+      "family": "parent_cluster",
+      "nodes": [
+        17487,
+        21174,
+        16152
+      ],
+      "n_pairwise_known": 3,
+      "mean_known_cos": 0.7683666666666666,
+      "max_known_cos": 0.9385,
+      "min_known_cos": 0.6712,
+      "known_pairs": [
+        {
+          "i": 17487,
+          "j": 21174,
+          "cos": 0.6954
+        },
+        {
+          "i": 17487,
+          "j": 16152,
+          "cos": 0.6712
+        },
+        {
+          "i": 21174,
+          "j": 16152,
+          "cos": 0.9385
+        }
+      ]
+    },
+    {
+      "family": "controls",
+      "nodes": [
+        1803,
+        1442,
+        10666
+      ],
+      "n_pairwise_known": 0,
+      "mean_known_cos": null,
+      "max_known_cos": null,
+      "min_known_cos": null,
+      "known_pairs": []
+    },
+    {
+      "family": "random_l8",
+      "nodes": [
+        5977,
+        22561,
+        6165,
+        3696
+      ],
+      "n_pairwise_known": 0,
+      "mean_known_cos": null,
+      "max_known_cos": null,
+      "min_known_cos": null,
+      "known_pairs": []
+    },
+    {
+      "family": "mixed_extreme",
+      "nodes": [
+        18298,
+        19679,
+        3268,
+        4855,
+        18458,
+        7685,
+        21750
+      ],
+      "n_pairwise_known": 0,
+      "mean_known_cos": null,
+      "max_known_cos": null,
+      "min_known_cos": null,
+      "known_pairs": []
+    }
+  ],
+  "observations": [
+    {
+      "type": "observation",
+      "item": "parent_cluster_tightness",
+      "value": [
+        0.6954,
+        0.6712,
+        0.9385
+      ],
+      "interpretation": "Parent cluster has high positive decoder-neighbor cosines where observed; supports structured neighborhood but not H7 alone."
+    },
+    {
+      "type": "observation",
+      "item": "hedge_family_tightness",
+      "value": [
+        0.8423
+      ],
+      "interpretation": "F19139-F11969 is a strong positive hedge-hedge neighbor; F18573 also points to parent features. This supports neighborhood structure but could also be ordinary hedge-family geometry."
+    },
+    {
+      "type": "observation",
+      "item": "manual_negative_cross_edges_from_supplement4",
+      "value": [
+        {
+          "pair": "F19139-F21174",
+          "cos": -0.705
+        },
+        {
+          "pair": "F11969-F16152",
+          "cos": -0.48
+        },
+        {
+          "pair": "F11969-F21174",
+          "cos": -0.312
+        },
+        {
+          "pair": "F19139-F16152",
+          "cos": -0.198
+        },
+        {
+          "pair": "F19139-F17487",
+          "cos": -0.105
+        },
+        {
+          "pair": "F11969-F17487",
+          "cos": -0.091
+        }
+      ],
+      "interpretation": "Hedge-parent relations include negative decoder opposition; this is direct hedge evidence and a candidate local-normal correction under H7, but not proof of manifold shattering."
+    },
+    {
+      "type": "observation",
+      "item": "random_l8_features_have_local_neighbors",
+      "value": [
+        {
+          "idx": 5977,
+          "group": "gpt2_extra_l8",
+          "frac_nonzero": 0.0003449122111002604,
+          "max_act": 67.15467834472656,
+          "explanation": "instances of the word \"pent\" along with related words or phrases",
+          "top_sim": [
+            {
+              "idx": 5977,
+              "cos": 1.0
+            },
+            {
+              "idx": 6674,
+              "cos": 0.3968
+            },
+            {
+              "idx": 24049,
+              "cos": 0.3909
+            },
+            {
+              "idx": 17285,
+              "cos": 0.3898
+            },
+            {
+              "idx": 20546,
+              "cos": 0.3743
+            }
+          ]
+        },
+        {
+          "idx": 22561,
+          "group": "gpt2_extra_l8",
+          "frac_nonzero": 0.001110712687174479,
+          "max_act": 34.48997497558594,
+          "explanation": "references to a specific individual named \"Soros\"",
+          "top_sim": [
+            {
+              "idx": 22561,
+              "cos": 1.0
+            },
+            {
+              "idx": 15944,
+              "cos": 0.4413
+            },
+            {
+              "idx": 9152,
+              "cos": 0.4183
+            },
+            {
+              "idx": 12047,
+              "cos": 0.3909
+            },
+            {
+              "idx": 8233,
+              "cos": 0.3839
+            }
+          ]
+        },
+        {
+          "idx": 6165,
+          "group": "gpt2_extra_l8",
+          "frac_nonzero": 0.00091552734375,
+          "max_act": 25.8155517578125,
+          "explanation": "proper nouns, specifically the surname \"Walsh\"",
+          "top_sim": [
+            {
+              "idx": 6165,
+              "cos": 1.0
+            },
+            {
+              "idx": 13600,
+              "cos": 0.2781
+            },
+            {
+              "idx": 5245,
+              "cos": 0.2625
+            },
+            {
+              "idx": 3095,
+              "cos": 0.2623
+            },
+            {
+              "idx": 15359,
+              "cos": 0.2611
+            }
+          ]
+        },
+        {
+          "idx": 3696,
+          "group": "gpt2_extra_l8",
+          "frac_nonzero": 0.0002768834431966146,
+          "max_act": 68.59798431396484,
+          "explanation": "mentions of the name \"Dem\" followed by other characters or words",
+          "top_sim": [
+            {
+              "idx": 3696,
+              "cos": 1.0
+            },
+            {
+              "idx": 6853,
+              "cos": 0.6309
+            },
+            {
+              "idx": 5517,
+              "cos": 0.4327
+            },
+            {
+              "idx": 15971,
+              "cos": 0.4116
+            },
+            {
+              "idx": 23955,
+              "cos": 0.4078
+            }
+          ]
+        },
+        {
+          "idx": 1803,
+          "group": "gpt2_controls",
+          "frac_nonzero": 0.0003646214803059896,
+          "max_act": 46.46549224853516,
+          "explanation": "years related to future predictions or targets",
+          "top_sim": [
+            {
+              "idx": 1803,
+              "cos": 1.0
+            },
+            {
+              "idx": 14355,
+              "cos": 0.5096
+            },
+            {
+              "idx": 23746,
+              "cos": 0.5005
+            },
+            {
+              "idx": 23638,
+              "cos": 0.4818
+            },
+            {
+              "idx": 7520,
+              "cos": 0.4627
+            }
+          ]
+        },
+        {
+          "idx": 1442,
+          "group": "gpt2_controls",
+          "frac_nonzero": 0.0002895991007486979,
+          "max_act": 71.948486328125,
+          "explanation": "locations or cities specifically denoted as \"capital\" in the text",
+          "top_sim": [
+            {
+              "idx": 1442,
+              "cos": 1.0
+            },
+            {
+              "idx": 12080,
+              "cos": 0.5815
+            },
+            {
+              "idx": 21625,
+              "cos": 0.5249
+            },
+            {
+              "idx": 19490,
+              "cos": 0.4498
+            },
+            {
+              "idx": 9101,
+              "cos": 0.4116
+            }
+          ]
+        },
+        {
+          "idx": 10666,
+          "group": "gpt2_controls",
+          "frac_nonzero": 0.0006621678670247396,
+          "max_act": 35.05573654174805,
+          "explanation": "expressions of admiration or appreciation",
+          "top_sim": [
+            {
+              "idx": 10666,
+              "cos": 1.0
+            },
+            {
+              "idx": 11978,
+              "cos": 0.6431
+            },
+            {
+              "idx": 22337,
+              "cos": 0.5983
+            },
+            {
+              "idx": 3959,
+              "cos": 0.5623
+            },
+            {
+              "idx": 16269,
+              "cos": 0.4965
+            }
+          ]
+        }
+      ],
+      "interpretation": "Several random layer-8 features [labelled 'active anti-aligned' in the original run; see ERRATA E7] have positive nearest-neighbor clusters, but semantics are diverse; this supports testing H7 across families rather than claiming one global manifold."
+    },
+    {
+      "type": "inference",
+      "item": "geodesic_chord_feasibility_limited",
+      "value": [
+        {
+          "i": 19139,
+          "j": 18573,
+          "direct_cos_known": null,
+          "positive_graph_distance": null,
+          "path": []
+        },
+        {
+          "i": 19139,
+          "j": 11969,
+          "direct_cos_known": 0.8423,
+          "positive_graph_distance": 0.15769999999999995,
+          "path": [
+            19139,
+            11969
+          ]
+        },
+        {
+          "i": 19139,
+          "j": 20804,
+          "direct_cos_known": null,
+          "positive_graph_distance": null,
+          "path": []
+        },
+        {
+          "i": 19139,
+          "j": 17487,
+          "direct_cos_known": null,
+          "positive_graph_distance": null,
+          "path": []
+        },
+        {
+          "i": 19139,
+          "j": 21174,
+          "direct_cos_known": null,
+          "positive_graph_distance": null,
+          "path": []
+        },
+        {
+          "i": 19139,
+          "j": 16152,
+          "direct_cos_known": null,
+          "positive_graph_distance": null,
+          "path": []
+        },
+        {
+          "i": 18573,
+          "j": 11969,
+          "direct_cos_known": null,
+          "positive_graph_distance": null,
+          "path": []
+        },
+        {
+          "i": 18573,
+          "j": 20804,
+          "direct_cos_known": null,
+          "positive_graph_distance": null,
+          "path": []
+        },
+        {
+          "i": 18573,
+          "j": 17487,
+          "direct_cos_known": null,
+          "positive_graph_distance": 1.1052,
+          "path": [
+            18573,
+            16152,
+            17487
+          ]
+        },
+        {
+          "i": 18573,
+          "j": 21174,
+          "direct_cos_known": 0.1577,
+          "positive_graph_distance": 0.8379,
+          "path": [
+            18573,
+            16152,
+            21174
+          ]
+        },
+        {
+          "i": 18573,
+          "j": 16152,
+          "direct_cos_known": 0.2236,
+          "positive_graph_distance": 0.7764,
+          "path": [
+            18573,
+            16152
+          ]
+        },
+        {
+          "i": 11969,
+          "j": 20804,
+          "direct_cos_known": null,
+          "positive_graph_distance": null,
+          "path": []
+        },
+        {
+          "i": 11969,
+          "j": 17487,
+          "direct_cos_known": null,
+          "positive_graph_distance": null,
+          "path": []
+        },
+        {
+          "i": 11969,
+          "j": 21174,
+          "direct_cos_known": null,
+          "positive_graph_distance": null,
+          "path": []
+        },
+        {
+          "i": 11969,
+          "j": 16152,
+          "direct_cos_known": null,
+          "positive_graph_distance": null,
+          "path": []
+        },
+        {
+          "i": 20804,
+          "j": 17487,
+          "direct_cos_known": null,
+          "positive_graph_distance": null,
+          "path": []
+        },
+        {
+          "i": 20804,
+          "j": 21174,
+          "direct_cos_known": null,
+          "positive_graph_distance": null,
+          "path": []
+        },
+        {
+          "i": 20804,
+          "j": 16152,
+          "direct_cos_known": null,
+          "positive_graph_distance": null,
+          "path": []
+        },
+        {
+          "i": 17487,
+          "j": 21174,
+          "direct_cos_known": 0.6954,
+          "positive_graph_distance": 0.3046,
+          "path": [
+            17487,
+            21174
+          ]
+        },
+        {
+          "i": 17487,
+          "j": 16152,
+          "direct_cos_known": 0.6712,
+          "positive_graph_distance": 0.3288,
+          "path": [
+            17487,
+            16152
+          ]
+        },
+        {
+          "i": 21174,
+          "j": 16152,
+          "direct_cos_known": 0.9385,
+          "positive_graph_distance": 0.0615,
+          "path": [
+            21174,
+            16152
+          ]
+        }
+      ],
+      "interpretation": "With only top-k neighbors for a small queried set, graph tests are underpowered. Need expanded Neuronpedia neighbor crawl or local SAE vectors."
+    }
+  ],
+  "conservative_conclusion": "Existing Supplement 3/4 data support structured hedge/parent neighborhoods and motivate H7. They do not demonstrate manifold fragmentation. Next falsifiable step is expanding local neighborhoods and computing graph/local-geometry diagnostics."
+}

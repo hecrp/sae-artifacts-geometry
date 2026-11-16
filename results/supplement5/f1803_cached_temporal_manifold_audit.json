@@ -1,0 +1,1232 @@
+{
+  "metadata": {
+    "status": "cached-data audit only; no model passes",
+    "cos3_path": "<local>/proyecto_hub_cosine/resultados/COS3_multidim_temporal.json",
+    "anom_path": "<local>/proyecto_hub_cosine/resultados/ANOM_2023_results.json"
+  },
+  "observations": [
+    {
+      "label": "observation",
+      "claim": "Cached COS3 result exists with script, JSON, and two figures in proyecto_hub_cosine.",
+      "basis": "<local>/proyecto_hub_cosine/resultados/COS3_multidim_temporal.json"
+    },
+    {
+      "label": "observation",
+      "claim": "Prior report states F1803 temporal PCA: PC1=30.5%, PC2=26.6%, PC3=23.7%, PC4=19.1%; PC2/PC1≈0.87, above Engels multidimensional threshold 0.30.",
+      "basis": "proyecto_hub_cosine/reportes/REPORTE_MAESTRO.md and project memory; verify fields in COS3 JSON before formal reuse."
+    },
+    {
+      "label": "observation",
+      "claim": "Prior report states steering along PC1 increased logit_diff by about +0.43 (2.13 to 2.55).",
+      "basis": "proyecto_hub_cosine/reportes/REPORTE_MAESTRO.md; this is causal relevance evidence for temporal geometry but not H7 proof."
+    },
+    {
+      "label": "observation",
+      "claim": "ANOM_2023 cached JSON exists and prior result resolves 2023 anomaly as BPE tokenization plus weak L0_MLP routing.",
+      "basis": "<local>/proyecto_hub_cosine/resultados/ANOM_2023_results.json"
+    },
+    {
+      "label": "inference",
+      "claim": "F1803 is a strong candidate for Workstream D: a temporal-coordinate/manifold case study that can be reanalyzed without new SAE training if cached vectors/PCA scores are recoverable.",
+      "basis": "COS3 JSON + report + figures."
+    },
+    {
+      "label": "hypothesis",
+      "claim": "F1803 may be a coordinate/shard of a temporal representation manifold rather than a single isolated scalar feature.",
+      "basis": "Compatible with multidimensional PCA and Goodfire/Engels framing; not demonstrated by current audit alone."
+    }
+  ],
+  "available_files": [
+    {
+      "path": "<local>/proyecto_hub_cosine/resultados/COS3_multidim_temporal.json",
+      "exists": true,
+      "bytes": 206562
+    },
+    {
+      "path": "<local>/proyecto_hub_cosine/resultados/ANOM_2023_results.json",
+      "exists": true,
+      "bytes": 21479
+    },
+    {
+      "path": "<local>/proyecto_hub_cosine/figuras/COS3_temporal_manifold_pca.png",
+      "exists": true,
+      "bytes": 510479
+    },
+    {
+      "path": "<local>/proyecto_hub_cosine/figuras/COS3_year_trajectory.png",
+      "exists": true,
+      "bytes": 504888
+    }
+  ],
+  "conservative_interpretation": "Cached F1803/COS3 assets are sufficient for a no-training reanalysis plan and possibly a Supplement 6 section, but not yet enough to claim H7. The next step is to parse COS3 JSON into a reproducible table of PCA variance, year coordinates, tokenization confounds, and steering metrics.",
+  "cos3_top_keys": [
+    "metadata",
+    "pca_primary",
+    "pca_cluster",
+    "activation_mean_by_year",
+    "trajectory_primary_pca",
+    "trajectory_cluster_pca",
+    "steering_results",
+    "per_prompt_data"
+  ],
+  "cos3_relevant_fields": [
+    {
+      "path": "/metadata/years",
+      "value": [
+        1990,
+        1995,
+        2000,
+        2005,
+        2010,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2030
+      ]
+    },
+    {
+      "path": "/metadata/n_prompts_per_year",
+      "value": 20
+    },
+    {
+      "path": "/metadata/cutoff_year",
+      "value": 2019
+    },
+    {
+      "path": "/pca_primary",
+      "value": "dict[6]"
+    },
+    {
+      "path": "/pca_primary/explained_variance",
+      "value": [
+        0.30542798377775077,
+        0.26633120849904407,
+        0.23739646467100872,
+        0.19084434305219652
+      ]
+    },
+    {
+      "path": "/pca_primary/explained_variance_cumsum",
+      "value": [
+        0.30542798377775077,
+        0.5717591922767948,
+        0.8091556569478036,
+        1.0
+      ]
+    },
+    {
+      "path": "/pca_primary/metrics/ratio_PC2_PC1",
+      "value": 0.8719934735673859
+    },
+    {
+      "path": "/pca_primary/metrics/spearman_PC1_year",
+      "value": 0.5759613441744416
+    },
+    {
+      "path": "/pca_primary/metrics/corr_PC1_PC2",
+      "value": 1.734723475976807e-17
+    },
+    {
+      "path": "/pca_primary/metrics/mean_PC1_ID",
+      "value": -0.45784655966490506
+    },
+    {
+      "path": "/pca_primary/metrics/mean_PC1_OOD",
+      "value": 0.6540665138070085
+    },
+    {
+      "path": "/pca_cluster",
+      "value": "dict[6]"
+    },
+    {
+      "path": "/pca_cluster/explained_variance",
+      "value": [
+        0.13696214952472205,
+        0.11426663715953438,
+        0.08504941367289028,
+        0.07140846981016949
+      ]
+    },
+    {
+      "path": "/pca_cluster/explained_variance_cumsum",
+      "value": [
+        0.13696214952472205,
+        0.2512287866842564,
+        0.3362782003571467,
+        0.4076866701673162
+      ]
+    },
+    {
+      "path": "/pca_cluster/metrics/ratio_PC2_PC1",
+      "value": 0.8342935442825313
+    },
+    {
+      "path": "/pca_cluster/metrics/spearman_PC1_year",
+      "value": 0.6602306739284082
+    },
+    {
+      "path": "/pca_cluster/metrics/corr_PC1_PC2",
+      "value": -3.885780586188048e-16
+    },
+    {
+      "path": "/pca_cluster/metrics/mean_PC1_ID",
+      "value": -0.9109930251108761
+    },
+    {
+      "path": "/pca_cluster/metrics/mean_PC1_OOD",
+      "value": 1.3014186073012524
+    },
+    {
+      "path": "/activation_mean_by_year",
+      "value": "dict[17]"
+    },
+    {
+      "path": "/activation_mean_by_year/1990/F1803",
+      "value": 0.0
+    },
+    {
+      "path": "/activation_mean_by_year/1995/F1803",
+      "value": 0.0
+    },
+    {
+      "path": "/activation_mean_by_year/2000/F1803",
+      "value": 0.03302620947360992
+    },
+    {
+      "path": "/activation_mean_by_year/2005/F1803",
+      "value": 0.0
+    },
+    {
+      "path": "/activation_mean_by_year/2010/F1803",
+      "value": 0.0
+    },
+    {
+      "path": "/activation_mean_by_year/2015/F1803",
+      "value": 0.0051861807703971865
+    },
+    {
+      "path": "/activation_mean_by_year/2016/F1803",
+      "value": 0.018425148725509644
+    },
+    {
+      "path": "/activation_mean_by_year/2017/F1803",
+      "value": 0.047941967844963074
+    },
+    {
+      "path": "/activation_mean_by_year/2018/F1803",
+      "value": 0.052466651797294615
+    },
+    {
+      "path": "/activation_mean_by_year/2019/F1803",
+      "value": 18.976384973526002
+    },
+    {
+      "path": "/activation_mean_by_year/2020/F1803",
+      "value": 34.84526405334473
+    },
+    {
+      "path": "/activation_mean_by_year/2021/F1803",
+      "value": 33.621073150634764
+    },
+    {
+      "path": "/activation_mean_by_year/2022/F1803",
+      "value": 29.973648452758788
+    },
+    {
+      "path": "/activation_mean_by_year/2023",
+      "value": "dict[7]"
+    },
+    {
+      "path": "/activation_mean_by_year/2023/F1803",
+      "value": 1.78777776658535
+    },
+    {
+      "path": "/activation_mean_by_year/2024/F1803",
+      "value": 31.69462823867798
+    },
+    {
+      "path": "/activation_mean_by_year/2025/F1803",
+      "value": 38.789368629455566
+    },
+    {
+      "path": "/activation_mean_by_year/2030/F1803",
+      "value": 40.07375564575195
+    },
+    {
+      "path": "/trajectory_primary_pca",
+      "value": "dict[17]"
+    },
+    {
+      "path": "/trajectory_primary_pca/2023",
+      "value": [
+        0.013547878956203158,
+        -0.9856840498109284,
+        -0.4662283349936289,
+        -0.034803847690985594
+      ]
+    },
+    {
+      "path": "/trajectory_cluster_pca",
+      "value": "dict[17]"
+    },
+    {
+      "path": "/trajectory_cluster_pca/2023",
+      "value": [
+        -0.1062697080925171,
+        -0.3446380285278405,
+        -0.3501346727277963,
+        -0.1868820605305098
+      ]
+    },
+    {
+      "path": "/steering_results",
+      "value": "dict[10]"
+    },
+    {
+      "path": "/per_prompt_data[0]/year",
+      "value": 1990
+    },
+    {
+      "path": "/per_prompt_data[0]/activations_primary",
+      "value": [
+        0.0,
+        29.849937438964844,
+        3.4205331802368164,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "path": "/per_prompt_data[1]/year",
+      "value": 1990
+    },
+    {
+      "path": "/per_prompt_data[1]/activations_primary",
+      "value": [
+        0.0,
+        12.17808723449707,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "path": "/per_prompt_data[2]/year",
+      "value": 1990
+    },
+    {
+      "path": "/per_prompt_data[2]/activations_primary",
+      "value": [
+        0.0,
+        1.8405450582504272,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "path": "/per_prompt_data[3]/year",
+      "value": 1990
+    },
+    {
+      "path": "/per_prompt_data[3]/activations_primary",
+      "value": [
+        0.0,
+        3.1048169136047363,
+        3.516526937484741,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "path": "/per_prompt_data[4]/year",
+      "value": 1990
+    },
+    {
+      "path": "/per_prompt_data[4]/activations_primary",
+      "value": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "path": "/per_prompt_data[5]/year",
+      "value": 1990
+    },
+    {
+      "path": "/per_prompt_data[5]/activations_primary",
+      "value": [
+        0.0,
+        0.0,
+        10.952802658081055,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "path": "/per_prompt_data[6]/year",
+      "value": 1990
+    },
+    {
+      "path": "/per_prompt_data[6]/activations_primary",
+      "value": [
+        0.0,
+        1.1631672382354736,
+        3.0006930828094482,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "path": "/per_prompt_data[7]/year",
+      "value": 1990
+    },
+    {
+      "path": "/per_prompt_data[7]/activations_primary",
+      "value": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.37817955017089844,
+        0.0
+      ]
+    },
+    {
+      "path": "/per_prompt_data[8]/year",
+      "value": 1990
+    },
+    {
+      "path": "/per_prompt_data[8]/activations_primary",
+      "value": [
+        0.0,
+        0.0,
+        11.175085067749023,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "path": "/per_prompt_data[9]/year",
+      "value": 1990
+    },
+    {
+      "path": "/per_prompt_data[9]/activations_primary",
+      "value": [
+        0.0,
+        0.0,
+        1.6506229639053345,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "path": "/per_prompt_data[10]/year",
+      "value": 1990
+    },
+    {
+      "path": "/per_prompt_data[10]/activations_primary",
+      "value": [
+        0.0,
+        0.0,
+        3.281853437423706,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "path": "/per_prompt_data[11]/year",
+      "value": 1990
+    },
+    {
+      "path": "/per_prompt_data[11]/activations_primary",
+      "value": [
+        0.0,
+        0.0,
+        1.2175660133361816,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "path": "/per_prompt_data[12]/year",
+      "value": 1990
+    },
+    {
+      "path": "/per_prompt_data[12]/activations_primary",
+      "value": [
+        0.0,
+        0.0,
+        1.6187700033187866,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "path": "/per_prompt_data[13]/year",
+      "value": 1990
+    },
+    {
+      "path": "/per_prompt_data[13]/activations_primary",
+      "value": [
+        0.0,
+        1.2812174558639526,
+        9.956315040588379,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "path": "/per_prompt_data[14]/year",
+      "value": 1990
+    },
+    {
+      "path": "/per_prompt_data[14]/activations_primary",
+      "value": [
+        0.0,
+        0.0,
+        8.94495964050293,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "path": "/per_prompt_data[15]/year",
+      "value": 1990
+    },
+    {
+      "path": "/per_prompt_data[15]/activations_primary",
+      "value": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "path": "/per_prompt_data[16]/year",
+      "value": 1990
+    },
+    {
+      "path": "/per_prompt_data[16]/activations_primary",
+      "value": [
+        0.0,
+        3.06501841545105,
+        9.763172149658203,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "path": "/per_prompt_data[17]/year",
+      "value": 1990
+    },
+    {
+      "path": "/per_prompt_data[17]/activations_primary",
+      "value": [
+        0.0,
+        0.0,
+        2.121131420135498,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "path": "/per_prompt_data[18]/year",
+      "value": 1990
+    },
+    {
+      "path": "/per_prompt_data[18]/activations_primary",
+      "value": [
+        0.0,
+        0.13957752287387848,
+        8.602774620056152,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "path": "/per_prompt_data[19]/year",
+      "value": 1990
+    },
+    {
+      "path": "/per_prompt_data[19]/activations_primary",
+      "value": [
+        0.0,
+        2.84989595413208,
+        9.533476829528809,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "anom_top_keys": [
+    "experiment",
+    "description",
+    "feature_id",
+    "b_enc_f1803",
+    "T1_tokenizacion",
+    "H1_confirmed",
+    "T2_embedding_distances",
+    "T2_embedding_distances_pairs",
+    "T2_norms",
+    "T3_50prompts",
+    "T4_variantes",
+    "T5_preReLU",
+    "T5_preReLU_50prompts",
+    "T6_bisiestos",
+    "T6_summary",
+    "T7_routing",
+    "conclusions"
+  ],
+  "anom_relevant_fields": [
+    {
+      "path": "/b_enc_f1803",
+      "value": -0.2641870379447937
+    },
+    {
+      "path": "/T1_tokenizacion",
+      "value": "dict[12]"
+    },
+    {
+      "path": "/T1_tokenizacion/2019/n_tokens",
+      "value": 1
+    },
+    {
+      "path": "/T1_tokenizacion/2019/token_strings",
+      "value": [
+        " 2019"
+      ]
+    },
+    {
+      "path": "/T1_tokenizacion/2019/token_ids",
+      "value": [
+        13130
+      ]
+    },
+    {
+      "path": "/T1_tokenizacion/2020/n_tokens",
+      "value": 1
+    },
+    {
+      "path": "/T1_tokenizacion/2020/token_strings",
+      "value": [
+        " 2020"
+      ]
+    },
+    {
+      "path": "/T1_tokenizacion/2020/token_ids",
+      "value": [
+        12131
+      ]
+    },
+    {
+      "path": "/T1_tokenizacion/2021/n_tokens",
+      "value": 1
+    },
+    {
+      "path": "/T1_tokenizacion/2021/token_strings",
+      "value": [
+        " 2021"
+      ]
+    },
+    {
+      "path": "/T1_tokenizacion/2021/token_ids",
+      "value": [
+        33448
+      ]
+    },
+    {
+      "path": "/T1_tokenizacion/2022/n_tokens",
+      "value": 1
+    },
+    {
+      "path": "/T1_tokenizacion/2022/token_strings",
+      "value": [
+        " 2022"
+      ]
+    },
+    {
+      "path": "/T1_tokenizacion/2022/token_ids",
+      "value": [
+        33160
+      ]
+    },
+    {
+      "path": "/T1_tokenizacion/2023",
+      "value": "dict[4]"
+    },
+    {
+      "path": "/T1_tokenizacion/2023/n_tokens",
+      "value": 2
+    },
+    {
+      "path": "/T1_tokenizacion/2023/token_strings",
+      "value": [
+        " 20",
+        "23"
+      ]
+    },
+    {
+      "path": "/T1_tokenizacion/2023/token_ids",
+      "value": [
+        1160,
+        1954
+      ]
+    },
+    {
+      "path": "/T1_tokenizacion/2024",
+      "value": "dict[4]"
+    },
+    {
+      "path": "/T1_tokenizacion/2024/n_tokens",
+      "value": 1
+    },
+    {
+      "path": "/T1_tokenizacion/2024/token_strings",
+      "value": [
+        " 2024"
+      ]
+    },
+    {
+      "path": "/T1_tokenizacion/2024/token_ids",
+      "value": [
+        48609
+      ]
+    },
+    {
+      "path": "/T1_tokenizacion/2025/n_tokens",
+      "value": 1
+    },
+    {
+      "path": "/T1_tokenizacion/2025/token_strings",
+      "value": [
+        " 2025"
+      ]
+    },
+    {
+      "path": "/T1_tokenizacion/2025/token_ids",
+      "value": [
+        32190
+      ]
+    },
+    {
+      "path": "/T1_tokenizacion/2026/n_tokens",
+      "value": 2
+    },
+    {
+      "path": "/T1_tokenizacion/2026/token_strings",
+      "value": [
+        " 20",
+        "26"
+      ]
+    },
+    {
+      "path": "/T1_tokenizacion/2026/token_ids",
+      "value": [
+        1160,
+        2075
+      ]
+    },
+    {
+      "path": "/T1_tokenizacion/2027/n_tokens",
+      "value": 2
+    },
+    {
+      "path": "/T1_tokenizacion/2027/token_strings",
+      "value": [
+        " 20",
+        "27"
+      ]
+    },
+    {
+      "path": "/T1_tokenizacion/2027/token_ids",
+      "value": [
+        1160,
+        1983
+      ]
+    },
+    {
+      "path": "/T1_tokenizacion/2028/n_tokens",
+      "value": 2
+    },
+    {
+      "path": "/T1_tokenizacion/2028/token_strings",
+      "value": [
+        " 20",
+        "28"
+      ]
+    },
+    {
+      "path": "/T1_tokenizacion/2028/token_ids",
+      "value": [
+        1160,
+        2078
+      ]
+    },
+    {
+      "path": "/T1_tokenizacion/2029/n_tokens",
+      "value": 2
+    },
+    {
+      "path": "/T1_tokenizacion/2029/token_strings",
+      "value": [
+        " 20",
+        "29"
+      ]
+    },
+    {
+      "path": "/T1_tokenizacion/2029/token_ids",
+      "value": [
+        1160,
+        1959
+      ]
+    },
+    {
+      "path": "/T1_tokenizacion/2030/n_tokens",
+      "value": 1
+    },
+    {
+      "path": "/T1_tokenizacion/2030/token_strings",
+      "value": [
+        " 2030"
+      ]
+    },
+    {
+      "path": "/T1_tokenizacion/2030/token_ids",
+      "value": [
+        25054
+      ]
+    },
+    {
+      "path": "/T2_embedding_distances/cos_2022_2023",
+      "value": 0.4082377254962921
+    },
+    {
+      "path": "/T2_embedding_distances/l2_2022_2023",
+      "value": 3.7467710971832275
+    },
+    {
+      "path": "/T2_embedding_distances/cos_2023_2024",
+      "value": 0.4243386387825012
+    },
+    {
+      "path": "/T2_embedding_distances/l2_2023_2024",
+      "value": 3.8287672996520996
+    },
+    {
+      "path": "/T2_embedding_distances/cos_2024_2025",
+      "value": 0.7436212301254272
+    },
+    {
+      "path": "/T2_embedding_distances/l2_2024_2025",
+      "value": 2.905432939529419
+    },
+    {
+      "path": "/T2_embedding_distances_pairs/2023_vs_2020",
+      "value": "dict[2]"
+    },
+    {
+      "path": "/T2_embedding_distances_pairs/2023_vs_2021",
+      "value": "dict[2]"
+    },
+    {
+      "path": "/T2_embedding_distances_pairs/2023_vs_2022",
+      "value": "dict[2]"
+    },
+    {
+      "path": "/T2_embedding_distances_pairs/2023_vs_2024",
+      "value": "dict[2]"
+    },
+    {
+      "path": "/T2_embedding_distances_pairs/2023_vs_2025",
+      "value": "dict[2]"
+    },
+    {
+      "path": "/T2_embedding_distances_pairs/2023_vs_2026",
+      "value": "dict[2]"
+    },
+    {
+      "path": "/T2_embedding_distances_pairs/2023_vs_2027",
+      "value": "dict[2]"
+    },
+    {
+      "path": "/T2_embedding_distances_pairs/norms/2023",
+      "value": 2.356806516647339
+    },
+    {
+      "path": "/T2_embedding_distances_pairs/norms/2024",
+      "value": 4.1789350509643555
+    },
+    {
+      "path": "/T2_norms/2023",
+      "value": 2.356806516647339
+    },
+    {
+      "path": "/T2_norms/2024",
+      "value": 4.1789350509643555
+    },
+    {
+      "path": "/T3_50prompts/acts_2023",
+      "value": "list[50]"
+    },
+    {
+      "path": "/T3_50prompts/acts_2024",
+      "value": "list[50]"
+    },
+    {
+      "path": "/T3_50prompts/mean_2023",
+      "value": 1.6609004354476928
+    },
+    {
+      "path": "/T3_50prompts/mean_2024",
+      "value": 29.77282325744629
+    },
+    {
+      "path": "/T3_50prompts/min_2023",
+      "value": 0.0
+    },
+    {
+      "path": "/T3_50prompts/max_2023",
+      "value": 5.918611526489258
+    },
+    {
+      "path": "/T3_50prompts/prompts_2023_above_5",
+      "value": 4
+    },
+    {
+      "path": "/T3_50prompts/prompts_2023_above_10",
+      "value": 0
+    },
+    {
+      "path": "/T3_50prompts/prompts_2023_above_20",
+      "value": 0
+    },
+    {
+      "path": "/T4_variantes/2023",
+      "value": "dict[3]"
+    },
+    {
+      "path": "/T4_variantes/2023/tokens",
+      "value": [
+        "20",
+        "23"
+      ]
+    },
+    {
+      "path": "/T4_variantes/2023/n_tokens",
+      "value": 2
+    },
+    {
+      "path": "/T4_variantes/2023/activation_last_token",
+      "value": 8.103134155273438
+    },
+    {
+      "path": "/T4_variantes/ 2023",
+      "value": "dict[3]"
+    },
+    {
+      "path": "/T4_variantes/ 2023/tokens",
+      "value": [
+        " 20",
+        "23"
+      ]
+    },
+    {
+      "path": "/T4_variantes/ 2023/n_tokens",
+      "value": 2
+    },
+    {
+      "path": "/T4_variantes/ 2023/activation_last_token",
+      "value": 12.27599811553955
+    },
+    {
+      "path": "/T4_variantes/the year 2023",
+      "value": "dict[3]"
+    },
+    {
+      "path": "/T4_variantes/the year 2023/tokens",
+      "value": [
+        "the",
+        " year",
+        " 20",
+        "23"
+      ]
+    },
+    {
+      "path": "/T4_variantes/the year 2023/n_tokens",
+      "value": 4
+    },
+    {
+      "path": "/T4_variantes/the year 2023/activation_last_token",
+      "value": 11.992572784423828
+    },
+    {
+      "path": "/T4_variantes/In 2023",
+      "value": "dict[3]"
+    },
+    {
+      "path": "/T4_variantes/In 2023/tokens",
+      "value": [
+        "In",
+        " 20",
+        "23"
+      ]
+    },
+    {
+      "path": "/T4_variantes/In 2023/n_tokens",
+      "value": 3
+    },
+    {
+      "path": "/T4_variantes/In 2023/activation_last_token",
+      "value": 10.40900993347168
+    },
+    {
+      "path": "/T4_variantes/2023,",
+      "value": "dict[3]"
+    },
+    {
+      "path": "/T4_variantes/2023,/tokens",
+      "value": [
+        "20",
+        "23",
+        ","
+      ]
+    },
+    {
+      "path": "/T4_variantes/2023,/n_tokens",
+      "value": 3
+    },
+    {
+      "path": "/T4_variantes/2023,/activation_last_token",
+      "value": 0.0
+    },
+    {
+      "path": "/T4_variantes/(2023)",
+      "value": "dict[3]"
+    },
+    {
+      "path": "/T4_variantes/(2023)/tokens",
+      "value": [
+        "(",
+        "20",
+        "23",
+        ")"
+      ]
+    },
+    {
+      "path": "/T4_variantes/(2023)/n_tokens",
+      "value": 4
+    },
+    {
+      "path": "/T4_variantes/(2023)/activation_last_token",
+      "value": 0.0
+    },
+    {
+      "path": "/T4_variantes//2023",
+      "value": "dict[3]"
+    },
+    {
+      "path": "/T4_variantes//2023/tokens",
+      "value": [
+        "/",
+        "20",
+        "23"
+      ]
+    },
+    {
+      "path": "/T4_variantes//2023/n_tokens",
+      "value": 3
+    },
+    {
+      "path": "/T4_variantes//2023/activation_last_token",
+      "value": 2.9548425674438477
+    },
+    {
+      "path": "/T4_variantes/year 2023 report",
+      "value": "dict[3]"
+    },
+    {
+      "path": "/T4_variantes/year 2023 report/tokens",
+      "value": [
+        "year",
+        " 20",
+        "23",
+        " report"
+      ]
+    },
+    {
+      "path": "/T4_variantes/year 2023 report/n_tokens",
+      "value": 4
+    },
+    {
+      "path": "/T4_variantes/year 2023 report/activation_last_token",
+      "value": 0.0
+    },
+    {
+      "path": "/T4_variantes/since 2023",
+      "value": "dict[3]"
+    },
+    {
+      "path": "/T4_variantes/since 2023/tokens",
+      "value": [
+        "since",
+        " 20",
+        "23"
+      ]
+    },
+    {
+      "path": "/T4_variantes/since 2023/n_tokens",
+      "value": 3
+    },
+    {
+      "path": "/T4_variantes/since 2023/activation_last_token",
+      "value": 5.866899490356445
+    },
+    {
+      "path": "/T4_variantes/from 2023 to",
+      "value": "dict[3]"
+    },
+    {
+      "path": "/T4_variantes/from 2023 to/tokens",
+      "value": [
+        "from",
+        " 20",
+        "23",
+        " to"
+      ]
+    },
+    {
+      "path": "/T4_variantes/from 2023 to/n_tokens",
+      "value": 4
+    },
+    {
+      "path": "/T4_variantes/from 2023 to/activation_last_token",
+      "value": 0.0
+    },
+    {
+      "path": "/T4_variantes/2023 was",
+      "value": "dict[3]"
+    },
+    {
+      "path": "/T4_variantes/2023 was/tokens",
+      "value": [
+        "20",
+        "23",
+        " was"
+      ]
+    },
+    {
+      "path": "/T4_variantes/2023 was/n_tokens",
+      "value": 3
+    },
+    {
+      "path": "/T4_variantes/2023 was/activation_last_token",
+      "value": 0.0
+    },
+    {
+      "path": "/T4_variantes/January 2023",
+      "value": "dict[3]"
+    },
+    {
+      "path": "/T4_variantes/January 2023/tokens",
+      "value": [
+        "January",
+        " 20",
+        "23"
+      ]
+    },
+    {
+      "path": "/T4_variantes/January 2023/n_tokens",
+      "value": 3
+    },
+    {
+      "path": "/T4_variantes/January 2023/activation_last_token",
+      "value": 6.687906265258789
+    },
+    {
+      "path": "/T4_variantes/Q1 2023",
+      "value": "dict[3]"
+    },
+    {
+      "path": "/T4_variantes/Q1 2023/tokens",
+      "value": [
+        "Q",
+        "1",
+        " 20",
+        "23"
+      ]
+    },
+    {
+      "path": "/T4_variantes/Q1 2023/n_tokens",
+      "value": 4
+    },
+    {
+      "path": "/T4_variantes/Q1 2023/activation_last_token",
+      "value": 11.358377456665039
+    },
+    {
+      "path": "/T4_variantes/FY2023",
+      "value": "dict[3]"
+    },
+    {
+      "path": "/T4_variantes/FY2023/tokens",
+      "value": [
+        "FY",
+        "20",
+        "23"
+      ]
+    }
+  ]
+}

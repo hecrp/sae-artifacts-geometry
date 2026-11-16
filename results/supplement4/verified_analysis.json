@@ -1,0 +1,353 @@
+{
+  "neuronpedia_snapshot": "full_analysis_20260304_203128.json",
+  "features": [
+    17487,
+    21174,
+    16152,
+    19139,
+    11969,
+    18573,
+    20804
+  ],
+  "cos_ED": {
+    "17487": 0.8216999769210815,
+    "21174": 0.6053000092506409,
+    "16152": 0.4832000136375427,
+    "19139": -0.5254999995231628,
+    "11969": -0.2856999933719635,
+    "18573": -0.42089998722076416,
+    "20804": -0.13009999692440033
+  },
+  "decoder_cosine_matrix": [
+    [
+      1.0,
+      0.6953999996185303,
+      0.6711999773979187,
+      -0.7045999765396118,
+      -0.47999998927116394,
+      -0.5109000205993652,
+      0.014999999664723873
+    ],
+    [
+      0.6953999996185303,
+      1.0,
+      0.9384999871253967,
+      -0.9901000261306763,
+      -0.8632000088691711,
+      0.15770000219345093,
+      -0.16349999606609344
+    ],
+    [
+      0.6711999773979187,
+      0.9384999871253967,
+      1.0,
+      -0.9078999757766724,
+      -0.9254999756813049,
+      0.22360000014305115,
+      -0.24070000648498535
+    ],
+    [
+      -0.7045999765396118,
+      -0.9901000261306763,
+      -0.9078999757766724,
+      1.0,
+      0.8422999978065491,
+      -0.14749999344348907,
+      0.09099999815225601
+    ],
+    [
+      -0.47999998927116394,
+      -0.8632000088691711,
+      -0.9254999756813049,
+      0.8422999978065491,
+      1.0,
+      -0.499099999666214,
+      -0.008899999782443047
+    ],
+    [
+      -0.5109000205993652,
+      0.15770000219345093,
+      0.22360000014305115,
+      -0.14749999344348907,
+      -0.499099999666214,
+      1.0,
+      0.066600002348423
+    ],
+    [
+      0.014999999664723873,
+      -0.16349999606609344,
+      -0.24070000648498535,
+      0.09099999815225601,
+      -0.008899999782443047,
+      0.066600002348423,
+      1.0
+    ]
+  ],
+  "pairs": [
+    {
+      "hedge": 19139,
+      "parent": 17487,
+      "decoder_cos": -0.7046,
+      "logit_vector_pearson": -0.4658,
+      "inversions_of_20": 1,
+      "mean_abs_delta_inverted": 0.1806,
+      "inverted_tokens": [
+        "kefeller"
+      ]
+    },
+    {
+      "hedge": 19139,
+      "parent": 21174,
+      "decoder_cos": -0.9901,
+      "logit_vector_pearson": -0.985,
+      "inversions_of_20": 13,
+      "mean_abs_delta_inverted": 0.0219,
+      "inverted_tokens": [
+        " Id",
+        "?,",
+        "onian",
+        " Enough",
+        " \u30b5",
+        " accelerator",
+        " Logged",
+        "merce",
+        "rys",
+        "ichever",
+        "kefeller",
+        "SPONSORED",
+        "Benz"
+      ]
+    },
+    {
+      "hedge": 19139,
+      "parent": 16152,
+      "decoder_cos": -0.9079,
+      "logit_vector_pearson": -0.841,
+      "inversions_of_20": 3,
+      "mean_abs_delta_inverted": 0.1074,
+      "inverted_tokens": [
+        "?,",
+        " Logged",
+        "SPONSORED"
+      ]
+    },
+    {
+      "hedge": 11969,
+      "parent": 17487,
+      "decoder_cos": -0.48,
+      "logit_vector_pearson": -0.3876,
+      "inversions_of_20": 0,
+      "mean_abs_delta_inverted": null,
+      "inverted_tokens": []
+    },
+    {
+      "hedge": 11969,
+      "parent": 21174,
+      "decoder_cos": -0.8632,
+      "logit_vector_pearson": -0.8716,
+      "inversions_of_20": 6,
+      "mean_abs_delta_inverted": 0.0688,
+      "inverted_tokens": [
+        "mouth",
+        "?,",
+        " Operator",
+        " Logged",
+        "ichever",
+        "SPONSORED"
+      ]
+    },
+    {
+      "hedge": 11969,
+      "parent": 16152,
+      "decoder_cos": -0.9255,
+      "logit_vector_pearson": -0.9388,
+      "inversions_of_20": 10,
+      "mean_abs_delta_inverted": 0.0696,
+      "inverted_tokens": [
+        "mouth",
+        "?,",
+        " Carney",
+        "washer",
+        " Logged",
+        "rum",
+        "schild",
+        "SPONSORED",
+        "urat",
+        "ideon"
+      ]
+    }
+  ],
+  "spearman_inversions_vs_abs_decoder_cos": {
+    "rho": 0.9429,
+    "p": 0.0048
+  },
+  "neuronpedia_top10_positive_logit_agreement": {
+    "17487": 0.9,
+    "21174": 1.0,
+    "16152": 1.0,
+    "19139": 0.9,
+    "11969": 1.0,
+    "18573": 1.0,
+    "20804": 1.0
+  },
+  "anti_aligned_queried": {
+    "n": 10,
+    "by_model": {
+      "gemma": 1,
+      "gpt2": 7,
+      "llama": 2
+    },
+    "without_neuronpedia_data": [
+      {
+        "model": "llama",
+        "layer": 1,
+        "feature": 27745
+      },
+      {
+        "model": "llama",
+        "layer": 1,
+        "feature": 24381
+      }
+    ],
+    "active_frac_gt_1e-6": [
+      {
+        "model": "gemma",
+        "layer": 1,
+        "feature": 3378,
+        "frac_nonzero": 0.01731,
+        "explanation": "references to software libraries and coding frameworks"
+      }
+    ],
+    "max_frac_gpt2": 3.178914388020833e-07
+  },
+  "queried_but_not_anti_aligned": [
+    {
+      "neuronpedia_group": "gpt2_parents",
+      "model": "gpt2",
+      "layer": 8,
+      "feature": 17487,
+      "cos_ED": 0.8217,
+      "sigma": 5.77
+    },
+    {
+      "neuronpedia_group": "gpt2_parents",
+      "model": "gpt2",
+      "layer": 8,
+      "feature": 21174,
+      "cos_ED": 0.6053,
+      "sigma": 3.02
+    },
+    {
+      "neuronpedia_group": "gpt2_parents",
+      "model": "gpt2",
+      "layer": 8,
+      "feature": 16152,
+      "cos_ED": 0.4832,
+      "sigma": 1.46
+    },
+    {
+      "neuronpedia_group": "gpt2_extreme",
+      "model": "gpt2",
+      "layer": 11,
+      "feature": 4855,
+      "cos_ED": 0.3279,
+      "sigma": -0.28
+    },
+    {
+      "neuronpedia_group": "gpt2_extreme",
+      "model": "gpt2",
+      "layer": 4,
+      "feature": 18458,
+      "cos_ED": 0.3541,
+      "sigma": 0.08
+    },
+    {
+      "neuronpedia_group": "gpt2_extreme",
+      "model": "gpt2",
+      "layer": 6,
+      "feature": 7685,
+      "cos_ED": 0.3714,
+      "sigma": 0.03
+    },
+    {
+      "neuronpedia_group": "gpt2_extreme",
+      "model": "gpt2",
+      "layer": 7,
+      "feature": 21750,
+      "cos_ED": 0.4496,
+      "sigma": 0.89
+    },
+    {
+      "neuronpedia_group": "gpt2_controls",
+      "model": "gpt2",
+      "layer": 8,
+      "feature": 1803,
+      "cos_ED": 0.3016,
+      "sigma": -0.85
+    },
+    {
+      "neuronpedia_group": "gpt2_controls",
+      "model": "gpt2",
+      "layer": 8,
+      "feature": 1442,
+      "cos_ED": 0.3126,
+      "sigma": -0.71
+    },
+    {
+      "neuronpedia_group": "gpt2_controls",
+      "model": "gpt2",
+      "layer": 8,
+      "feature": 10666,
+      "cos_ED": 0.2341,
+      "sigma": -1.71
+    },
+    {
+      "neuronpedia_group": "gpt2_extra_l8",
+      "model": "gpt2",
+      "layer": 8,
+      "feature": 5977,
+      "cos_ED": 0.3717,
+      "sigma": 0.04
+    },
+    {
+      "neuronpedia_group": "gpt2_extra_l8",
+      "model": "gpt2",
+      "layer": 8,
+      "feature": 22561,
+      "cos_ED": 0.3467,
+      "sigma": -0.27
+    },
+    {
+      "neuronpedia_group": "gpt2_extra_l8",
+      "model": "gpt2",
+      "layer": 8,
+      "feature": 6165,
+      "cos_ED": 0.4374,
+      "sigma": 0.88
+    },
+    {
+      "neuronpedia_group": "gpt2_extra_l8",
+      "model": "gpt2",
+      "layer": 8,
+      "feature": 3696,
+      "cos_ED": 0.3315,
+      "sigma": -0.47
+    },
+    {
+      "neuronpedia_group": "llama_extreme",
+      "model": "llama",
+      "layer": 0,
+      "feature": 15649,
+      "cos_ED": 0.2382,
+      "sigma": -1.27
+    },
+    {
+      "neuronpedia_group": "llama_extreme",
+      "model": "llama",
+      "layer": 2,
+      "feature": 30420,
+      "cos_ED": 0.3795,
+      "sigma": -0.26
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+model,architecture,layer_idx,relative_depth,r_pearson,n_features,d_sae,sae_id
+"GPT-2 Small
+(ReLU+L1)",ReLU+L1 (ghost gradients),0,0.0,0.6208874290645896,24576,24576,blocks.0.hook_resid_pre
+"GPT-2 Small
+(ReLU+L1)",ReLU+L1 (ghost gradients),1,0.0909,0.4321079598973735,24576,24576,blocks.1.hook_resid_pre
+"GPT-2 Small
+(ReLU+L1)",ReLU+L1 (ghost gradients),2,0.1818,0.49317144928361345,24576,24576,blocks.2.hook_resid_pre
+"GPT-2 Small
+(ReLU+L1)",ReLU+L1 (ghost gradients),3,0.2727,0.39652749109468666,24576,24576,blocks.3.hook_resid_pre
+"GPT-2 Small
+(ReLU+L1)",ReLU+L1 (ghost gradients),4,0.3636,-0.26037121410011554,24576,24576,blocks.4.hook_resid_pre
+"GPT-2 Small
+(ReLU+L1)",ReLU+L1 (ghost gradients),5,0.4545,-0.6378029946815287,24576,24576,blocks.5.hook_resid_pre
+"GPT-2 Small
+(ReLU+L1)",ReLU+L1 (ghost gradients),6,0.5455,-0.7361833763863198,24576,24576,blocks.6.hook_resid_pre
+"GPT-2 Small
+(ReLU+L1)",ReLU+L1 (ghost gradients),7,0.6364,-0.755931499975929,24576,24576,blocks.7.hook_resid_pre
+"GPT-2 Small
+(ReLU+L1)",ReLU+L1 (ghost gradients),8,0.7273,-0.7470513140029851,24576,24576,blocks.8.hook_resid_pre
+"GPT-2 Small
+(ReLU+L1)",ReLU+L1 (ghost gradients),9,0.8182,-0.7558184472395754,24576,24576,blocks.9.hook_resid_pre
+"GPT-2 Small
+(ReLU+L1)",ReLU+L1 (ghost gradients),10,0.9091,-0.7114680119896551,24576,24576,blocks.10.hook_resid_pre
+"GPT-2 Small
+(ReLU+L1)",ReLU+L1 (ghost gradients),11,1.0,-0.6385213418699814,24576,24576,blocks.11.hook_resid_pre
+"Gemma 2B
+(JumpReLU)",JumpReLU (learned threshold),0,0.0,-0.9411470818158675,16384,16384,layer_0/width_16k/canonical
+"Gemma 2B
+(JumpReLU)",JumpReLU (learned threshold),1,0.04,-0.8749055338387755,16384,16384,layer_1/width_16k/canonical
+"Gemma 2B
+(JumpReLU)",JumpReLU (learned threshold),2,0.08,-0.8897207114650223,16384,16384,layer_2/width_16k/canonical
+"Gemma 2B
+(JumpReLU)",JumpReLU (learned threshold),3,0.12,-0.8864348078356034,16384,16384,layer_3/width_16k/canonical
+"Gemma 2B
+(JumpReLU)",JumpReLU (learned threshold),4,0.16,-0.9018333115810339,16384,16384,layer_4/width_16k/canonical
+"Gemma 2B
+(JumpReLU)",JumpReLU (learned threshold),5,0.2,-0.8703060710390278,16384,16384,layer_5/width_16k/canonical
+"Gemma 2B
+(JumpReLU)",JumpReLU (learned threshold),6,0.24,-0.857226679257243,16384,16384,layer_6/width_16k/canonical
+"Gemma 2B
+(JumpReLU)",JumpReLU (learned threshold),7,0.28,-0.8330612970832658,16384,16384,layer_7/width_16k/canonical
+"Gemma 2B
+(JumpReLU)",JumpReLU (learned threshold),8,0.32,-0.8289149570727857,16384,16384,layer_8/width_16k/canonical
+"Gemma 2B
+(JumpReLU)",JumpReLU (learned threshold),9,0.36,-0.8309727363987708,16384,16384,layer_9/width_16k/canonical
+"Gemma 2B
+(JumpReLU)",JumpReLU (learned threshold),10,0.4,-0.836685606607175,16384,16384,layer_10/width_16k/canonical
+"Gemma 2B
+(JumpReLU)",JumpReLU (learned threshold),11,0.44,-0.8090523087803144,16384,16384,layer_11/width_16k/canonical
+"Gemma 2B
+(JumpReLU)",JumpReLU (learned threshold),12,0.48,-0.8078439181427027,16384,16384,layer_12/width_16k/canonical
+"Gemma 2B
+(JumpReLU)",JumpReLU (learned threshold),13,0.52,-0.7929159696736283,16384,16384,layer_13/width_16k/canonical
+"Gemma 2B
+(JumpReLU)",JumpReLU (learned threshold),14,0.56,-0.8229417961014206,16384,16384,layer_14/width_16k/canonical
+"Gemma 2B
+(JumpReLU)",JumpReLU (learned threshold),15,0.6,-0.818848424984915,16384,16384,layer_15/width_16k/canonical
+"Gemma 2B
+(JumpReLU)",JumpReLU (learned threshold),16,0.64,-0.823933277385957,16384,16384,layer_16/width_16k/canonical
+"Gemma 2B
+(JumpReLU)",JumpReLU (learned threshold),17,0.68,-0.822219476507153,16384,16384,layer_17/width_16k/canonical
+"Gemma 2B
+(JumpReLU)",JumpReLU (learned threshold),18,0.72,-0.8017978319562774,16384,16384,layer_18/width_16k/canonical
+"Gemma 2B
+(JumpReLU)",JumpReLU (learned threshold),19,0.76,-0.7790247216811619,16384,16384,layer_19/width_16k/canonical
+"Gemma 2B
+(JumpReLU)",JumpReLU (learned threshold),20,0.8,-0.7727675446580955,16384,16384,layer_20/width_16k/canonical
+"Gemma 2B
+(JumpReLU)",JumpReLU (learned threshold),21,0.84,-0.731414633341588,16384,16384,layer_21/width_16k/canonical
+"Gemma 2B
+(JumpReLU)",JumpReLU (learned threshold),22,0.88,-0.7183241604629176,16384,16384,layer_22/width_16k/canonical
+"Gemma 2B
+(JumpReLU)",JumpReLU (learned threshold),23,0.92,-0.7317008099908603,16384,16384,layer_23/width_16k/canonical
+"Gemma 2B
+(JumpReLU)",JumpReLU (learned threshold),24,0.96,-0.7839846437377949,16384,16384,layer_24/width_16k/canonical
+"Gemma 2B
+(JumpReLU)",JumpReLU (learned threshold),25,1.0,-0.771906895397528,16384,16384,layer_25/width_16k/canonical
+"Llama 3.1 8B
+(JumpReLU)",JumpReLU (Llama Scope),0,0.0,-0.6831414804809408,32768,32768,l0r_8x
+"Llama 3.1 8B
+(JumpReLU)",JumpReLU (Llama Scope),1,0.0323,-0.7863904753678873,32768,32768,l1r_8x
+"Llama 3.1 8B
+(JumpReLU)",JumpReLU (Llama Scope),2,0.0645,-0.8538001323417967,32768,32768,l2r_8x
+"Llama 3.1 8B
+(JumpReLU)",JumpReLU (Llama Scope),3,0.0968,-0.8949867928589784,32768,32768,l3r_8x
+"Llama 3.1 8B
+(JumpReLU)",JumpReLU (Llama Scope),4,0.129,-0.8871325039327267,32768,32768,l4r_8x
+"Llama 3.1 8B
+(JumpReLU)",JumpReLU (Llama Scope),5,0.1613,-0.8833650936614721,32768,32768,l5r_8x
+"Llama 3.1 8B
+(JumpReLU)",JumpReLU (Llama Scope),6,0.1935,-0.8724442003740542,32768,32768,l6r_8x
+"Llama 3.1 8B
+(JumpReLU)",JumpReLU (Llama Scope),7,0.2258,-0.8549019973253528,32768,32768,l7r_8x
+"Llama 3.1 8B
+(JumpReLU)",JumpReLU (Llama Scope),8,0.2581,-0.8388557566913706,32768,32768,l8r_8x
+"Llama 3.1 8B
+(JumpReLU)",JumpReLU (Llama Scope),9,0.2903,-0.8165738099046805,32768,32768,l9r_8x
+"Llama 3.1 8B
+(JumpReLU)",JumpReLU (Llama Scope),10,0.3226,-0.8110584306728742,32768,32768,l10r_8x
+"Llama 3.1 8B
+(JumpReLU)",JumpReLU (Llama Scope),11,0.3548,-0.8112499022427883,32768,32768,l11r_8x
+"Llama 3.1 8B
+(JumpReLU)",JumpReLU (Llama Scope),12,0.3871,-0.7842959504292388,32768,32768,l12r_8x
+"Llama 3.1 8B
+(JumpReLU)",JumpReLU (Llama Scope),13,0.4194,-0.7926099748656398,32768,32768,l13r_8x
+"Llama 3.1 8B
+(JumpReLU)",JumpReLU (Llama Scope),14,0.4516,-0.7864859861383238,32768,32768,l14r_8x
+"Llama 3.1 8B
+(JumpReLU)",JumpReLU (Llama Scope),15,0.4839,-0.7890541675294086,32768,32768,l15r_8x
+"Llama 3.1 8B
+(JumpReLU)",JumpReLU (Llama Scope),16,0.5161,-0.7731177064968506,32768,32768,l16r_8x
+"Llama 3.1 8B
+(JumpReLU)",JumpReLU (Llama Scope),17,0.5484,-0.7733597743431854,32768,32768,l17r_8x
+"Llama 3.1 8B
+(JumpReLU)",JumpReLU (Llama Scope),18,0.5806,-0.770634900787545,32768,32768,l18r_8x
+"Llama 3.1 8B
+(JumpReLU)",JumpReLU (Llama Scope),19,0.6129,-0.7728038374625009,32768,32768,l19r_8x
+"Llama 3.1 8B
+(JumpReLU)",JumpReLU (Llama Scope),20,0.6452,-0.7721601451315422,32768,32768,l20r_8x
+"Llama 3.1 8B
+(JumpReLU)",JumpReLU (Llama Scope),21,0.6774,-0.7516537681886682,32768,32768,l21r_8x
+"Llama 3.1 8B
+(JumpReLU)",JumpReLU (Llama Scope),22,0.7097,-0.7470719212380406,32768,32768,l22r_8x
+"Llama 3.1 8B
+(JumpReLU)",JumpReLU (Llama Scope),23,0.7419,-0.741843939874162,32768,32768,l23r_8x
+"Llama 3.1 8B
+(JumpReLU)",JumpReLU (Llama Scope),24,0.7742,-0.7373999756396065,32768,32768,l24r_8x
+"Llama 3.1 8B
+(JumpReLU)",JumpReLU (Llama Scope),25,0.8065,-0.7400698631885146,32768,32768,l25r_8x
+"Llama 3.1 8B
+(JumpReLU)",JumpReLU (Llama Scope),26,0.8387,-0.7389317561303743,32768,32768,l26r_8x
+"Llama 3.1 8B
+(JumpReLU)",JumpReLU (Llama Scope),27,0.871,-0.7571076571100901,32768,32768,l27r_8x
+"Llama 3.1 8B
+(JumpReLU)",JumpReLU (Llama Scope),28,0.9032,-0.7672909564045929,32768,32768,l28r_8x
+"Llama 3.1 8B
+(JumpReLU)",JumpReLU (Llama Scope),29,0.9355,-0.763609122485305,32768,32768,l29r_8x
+"Llama 3.1 8B
+(JumpReLU)",JumpReLU (Llama Scope),30,0.9677,-0.7829648716508153,32768,32768,l30r_8x
+"Llama 3.1 8B
+(JumpReLU)",JumpReLU (Llama Scope),31,1.0,-0.7852327869677294,32768,32768,l31r_8x

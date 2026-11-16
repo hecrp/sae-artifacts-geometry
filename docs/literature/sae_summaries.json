@@ -1,0 +1,169 @@
+[
+  {
+    "key": "leask2025",
+    "title": "Sparse Autoencoders Do Not Find Canonical Units of Analysis",
+    "authors": [
+      "Patrick Leask",
+      "Bart Bussmann",
+      "Michael Pearce",
+      "Joseph Bloom",
+      "Curt Tigges",
+      "Noura Al Moubayed",
+      "Lee Sharkey",
+      "Neel Nanda"
+    ],
+    "year": 2025,
+    "pdf_path": "papers/leask2025_canonical_units.pdf",
+    "url": "https://arxiv.org/abs/2502.04878",
+    "summary": "This paper directly challenges a foundational assumption in the SAE interpretability program: that SAEs can discover a canonical, unique, and complete set of atomic features for a neural network. The problem it targets is the belief that a 'correct' dictionary size exists and that the features thereby found represent stable, indivisible units of representation. The authors introduce two novel empirical techniques to stress-test this claim. The first, SAE stitching, involves inserting or swapping latents from a larger SAE into a smaller one. Latents are classified as 'novel' (improving smaller SAE performance, indicating information not captured at smaller scale) or 'reconstruction' (replacing similar-behaving latents). The existence of novel latents proves smaller SAEs are incomplete. The second technique, meta-SAEs, trains a new SAE on the decoder weight matrix of an existing SAE. When latents from a larger SAE decompose into combinations of latents from a smaller one, this demonstrates the larger SAE's latents are not atomic. Crucially, these decompositions are often semantically coherent: a latent for 'Einstein' decomposes into 'scientist', 'Germany', and 'famous person'. The main findings are that SAEs at different scales are neither complete nor atomic relative to each other — there is a continuous hierarchy of feature granularity with no privileged level. The authors conclude that the search for a canonical set of features via SAEs may be misguided and suggest researchers either pursue alternative approaches or pragmatically select SAE size for the task at hand. For geometry-of-SAE-artifacts research, this paper is directly relevant: the discovered hierarchical decomposition structure, where features at different scales form nested geometric relationships in embedding space, strongly motivates studying the geometric relationships between SAE latents across scales. Latent geometry (how features for 'Einstein', 'scientist', 'Germany', 'famous person' relate spatially) becomes a primary object of study rather than an afterthought."
+  },
+  {
+    "key": "lieberum2024",
+    "title": "Gemma Scope: Open Sparse Autoencoders Everywhere All At Once on Gemma 2",
+    "authors": [
+      "Tom Lieberum",
+      "Senthooran Rajamanoharan",
+      "Arthur Conmy",
+      "Lewis Smith",
+      "Nicolas Sonnerat",
+      "Vikrant Varma",
+      "Janos Kramar",
+      "Anca Dragan",
+      "Rohin Shah",
+      "Neel Nanda"
+    ],
+    "year": 2024,
+    "pdf_path": "papers/lieberum2024_gemma_scope.pdf",
+    "url": "https://arxiv.org/abs/2408.05147",
+    "summary": "Gemma Scope addresses a critical infrastructure problem in SAE interpretability research: the prohibitive computational cost of training comprehensive SAE suites has largely restricted such work to industry labs, leaving academic and independent researchers without the trained models necessary to conduct ambitious interpretability experiments. The paper introduces an open suite of JumpReLU SAEs trained exhaustively across all layers and sub-layers of Gemma 2 2B and 9B language models, with select layers of Gemma 2 27B. The key architectural choice is JumpReLU — an activation function that applies a learned threshold below which activations are zeroed, producing hard sparsity that tends to outperform standard ReLU SAEs on the reconstruction-sparsity trade-off. Additionally, SAEs were trained on the instruction-tuned variant of Gemma 2 9B for comparison with base model SAEs. Each SAE is evaluated on standard quality metrics including L0 sparsity, reconstruction fidelity (variance explained), and downstream task performance. The paper releases all SAE weights, training code, and an interactive demo. Primary contributions are (1) comprehensive coverage — every layer and sublayer is addressed, enabling longitudinal studies of how representations evolve through depth — and (2) multiple width settings at each location, which enables direct study of how feature geometry changes with dictionary size. For geometry-of-SAE-artifacts research, Gemma Scope is arguably the most important practical resource available: it provides a standardized, multi-scale collection of SAEs where geometric artifacts (feature splitting patterns, dead latent emergence, decoder direction clustering) can be systematically characterized across architecturally matched models. The availability of SAEs at every layer also enables comparing geometric structure in early vs. late layers, and the multi-width settings at each location permit studying how geometric relationships between latents evolve as expansion factor increases."
+  },
+  {
+    "key": "peter2025",
+    "title": "Learning Multi-Level Features with Matryoshka Sparse Autoencoders",
+    "authors": [
+      "Matryoshka SAE Authors (see arXiv:2503.17547)"
+    ],
+    "year": 2025,
+    "pdf_path": "papers/peter2025_matryoshka_sae.pdf",
+    "url": "https://arxiv.org/abs/2503.17547",
+    "summary": "This paper identifies and addresses a fundamental tension in SAE design: as dictionary size increases to capture more fine-grained concepts, sparsity pressure causes general/high-level features to be split into overly specific sub-features or absorbed into them, causing important abstract features to disappear or become distorted. Standard SAEs thus force a trade-off between breadth and granularity at a single resolution. Inspired by Matryoshka Representation Learning (nested embeddings), the authors introduce Matryoshka SAEs — a variant that simultaneously trains multiple nested dictionaries of increasing size (e.g., 512, 2048, 8192 latents) sharing the same model activation input. Smaller dictionaries are forced to independently reconstruct the inputs without access to the larger dictionaries. This creates an inductive bias for hierarchical organization: small dictionaries learn broad, general concepts, while larger dictionaries learn increasingly specific refinements, without incentive to cannibalize the high-level features since those are already handled by the smaller sub-dictionary. Experiments on Gemma-2-2B and TinyStories show Matryoshka SAEs achieve superior performance on sparse probing and concept erasure tasks, produce more disentangled concept representations, and exhibit significantly reduced feature absorption compared to standard SAEs. There is a minor reconstruction quality trade-off. For geometry-of-SAE-artifacts research, Matryoshka SAEs are highly relevant because they make the hierarchical geometric structure of features explicit and trainable. The nested dictionary structure directly encodes a multi-scale geometry: the same concept is represented at multiple resolutions simultaneously, and the geometric relationship (direction, angle, distance) between a high-level feature vector and its fine-grained children in the decoder space becomes a measurable artifact of the architecture. Studying how decoder directions for nested features relate geometrically — whether children cluster angularly around parents, whether they are nearly orthogonal or collinear — directly addresses the geometry of SAE artifacts."
+  },
+  {
+    "key": "song2025",
+    "title": "Position: Mechanistic Interpretability Should Prioritize Feature Consistency in SAEs",
+    "authors": [
+      "Song et al. (see arXiv:2505.20254)"
+    ],
+    "year": 2025,
+    "pdf_path": "papers/song2025_feature_consistency.pdf",
+    "url": "https://arxiv.org/abs/2505.20254",
+    "summary": "This position paper confronts a reproducibility and reliability crisis in SAE research: even when trained on identical data using the same architecture and hyperparameters, independent SAE training runs learn different sets of features, making it unclear whether any particular feature is a genuine property of the model being studied or an artifact of a specific training run. This inconsistency undermines the accumulation of knowledge in mechanistic interpretability, since findings tied to specific latents may not replicate. The paper proposes that the field should formally adopt feature consistency — the reliable convergence to equivalent feature sets across independent runs — as a primary optimization target, and introduces the Pairwise Dictionary Mean Correlation Coefficient (PW-MCC) as a practical metric to operationalize this. PW-MCC measures the average best-match correlation between latent directions across two independently trained SAEs; a high score means the same features appeared in both runs. Through synthetic experiments using a model organism (where ground-truth features are known), the authors validate PW-MCC as a reliable proxy for ground-truth feature recovery. Applied to real LLM activations, they demonstrate that TopK SAEs can achieve PW-MCC of 0.80 — indicating high consistency — and that this strongly correlates with the semantic similarity of feature explanations generated by automated interpretability methods. For geometry-of-SAE-artifacts research, this paper is particularly foundational: it reframes the study of SAE artifacts from a qualitative concern to a quantifiable geometric one. PW-MCC is essentially a measure of directional alignment between corresponding latent vectors across runs; whether learned decoder directions are stable point to geometric properties of the loss landscape and the feature geometry of the underlying model. Low consistency implies the SAE is discovering different geometric cross-sections of the same underlying manifold of representable features on each run — a key artifact to characterize geometrically."
+  },
+  {
+    "key": "elhage2022",
+    "title": "Toy Models of Superposition",
+    "authors": [
+      "Nelson Elhage",
+      "Tristan Hume",
+      "Catherine Olsson",
+      "Nicholas Schiefer",
+      "Tom Henighan",
+      "Shauna Kravec",
+      "Zac Hatfield-Dodds",
+      "Robert Lasenby",
+      "Dawn Drain",
+      "Carol Chen",
+      "Roger Grosse",
+      "Sam McCandlish",
+      "Jared Kaplan",
+      "Dario Amodei",
+      "Martin Wattenberg",
+      "Christopher Olah"
+    ],
+    "year": 2022,
+    "pdf_path": null,
+    "url": "https://transformer-circuits.pub/2022/toy_model/index.html",
+    "summary": "This landmark paper from Anthropic's mechanistic interpretability team establishes the theoretical and empirical foundation for the entire SAE interpretability program. The core problem it addresses is why neural network neurons are often polysemantic — responding to multiple unrelated inputs — rather than cleanly corresponding to single, interpretable features. The paper introduces the superposition hypothesis: networks can represent more features than they have dimensions by using nearly-orthogonal directions in high-dimensional space, analogously to compressed sensing. When input features are sparse (as real-world concepts tend to be), the interference cost of packing multiple features into fewer dimensions is outweighed by the representational benefit. The key methods involve small ReLU toy networks trained on synthetic sparse input data, where ground-truth features are known, allowing direct measurement of how features are geometrically arranged in activation space. Main findings include: (1) Superposition is a real, empirically observable phenomenon, not just a theoretical concern. (2) Whether a feature is stored in superposition is governed by a phase transition depending on feature importance and sparsity — producing a two-dimensional phase diagram. (3) Superposition exhibits rich geometric structure: when many features are packed into few dimensions, they organize into specific geometric configurations including digons, triangles, pentagons, and tetrahedra — corresponding to the vertices of uniform polytopes. (4) Some computation can be performed while in superposition. (5) Monosemantic neurons arise when a feature is important enough to warrant a dedicated dimension; polysemantic neurons arise from superposition. For geometry-of-SAE-artifacts research, this paper is essential context: the geometric structures discovered in superposition (polytope arrangements, angular relationships between feature vectors) are precisely the structures that SAEs attempt to disentangle, and the artifacts SAEs produce (dead latents, feature splitting, imperfect reconstruction) can be understood as consequences of the geometry described here. The uniform polytope geometry of superposition directly motivates studying the geometry of SAE decoder directions."
+  },
+  {
+    "key": "bricken2023",
+    "title": "Towards Monosemanticity: Decomposing Language Models With Dictionary Learning",
+    "authors": [
+      "Trenton Bricken",
+      "Adly Templeton",
+      "Joshua Batson",
+      "Brian Chen",
+      "Adam Jermyn",
+      "Tom Conerly",
+      "Nicholas L Turner",
+      "Cem Anil",
+      "Carson Denison",
+      "Amanda Askell",
+      "Robert Lasenby",
+      "Yifan Wu",
+      "Shauna Kravec",
+      "Nicholas Schiefer",
+      "Tim Maxwell",
+      "Nicholas Joseph",
+      "Alex Tamkin",
+      "Karina Nguyen",
+      "Brayden McLean",
+      "Josiah E Burke",
+      "Tristan Hume",
+      "Shan Carter",
+      "Tom Henighan",
+      "Chris Olah"
+    ],
+    "year": 2023,
+    "pdf_path": null,
+    "url": "https://transformer-circuits.pub/2023/monosemantic-features/index.html",
+    "summary": "Building directly on the superposition hypothesis from Toy Models, this paper provides the first large-scale empirical demonstration that sparse autoencoders can successfully decompose a real language model's representations into monosemantic (single-concept) features. The problem being solved is polysemanticity in neurons: since neurons respond to multiple unrelated inputs, they cannot serve as the basic units of a mechanistic understanding of language models. The key method is training sparse autoencoders (a weak dictionary learning algorithm) on the MLP activations of a one-layer transformer with a 512-neuron MLP layer, using 8 billion data points and expansion factors from 1x (512 features) to 256x (131,072 features). The SAE architecture uses an encoder that maps to higher dimensions via learned weights plus ReLU, a decoder that maps back to the original space, and training with reconstruction loss plus L1 sparsity penalty. Multiple lines of evidence establish the monosemanticity of discovered features: (1) detailed manual investigations of specific features (Arabic script, DNA sequences, base64, Hebrew text) where computational proxies can be constructed; (2) human ratings of interpretability for random feature samples; (3) automated interpretability scoring of activating examples; (4) automated interpretability of downstream logit effects. Quantitative comparison shows learned features are substantially more interpretable than neurons. The paper also documents several important phenomenological findings: feature splitting (a single feature at lower expansion factor splitting into related sub-features at higher expansion); universality (similar features appearing across different SAE training runs and possibly across different models); and 'finite state automata'-like circuits implementing behaviours through feature interactions. For geometry-of-SAE-artifacts research, this paper establishes the empirical baseline for what SAE artifacts look like in practice. Feature splitting is a geometric phenomenon — the original direction splintering into multiple nearby directions — and its systematic study requires understanding the angular geometry of decoder vectors at different expansion factors. The paper's UMAP visualization of all features coembed together is an early example of studying the global geometry of SAE feature space."
+  },
+  {
+    "key": "templeton2024",
+    "title": "Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet",
+    "authors": [
+      "Adly Templeton",
+      "Tom Conerly",
+      "Jonathan Marcus",
+      "Jack Lindsey",
+      "Trenton Bricken",
+      "Brian Chen",
+      "Adam Pearce",
+      "Craig Citro",
+      "Emmanuel Ameisen",
+      "Andy Jones",
+      "Hoagy Cunningham",
+      "Nicholas L Turner",
+      "Callum McDougall",
+      "Monte MacDiarmid",
+      "Alex Tamkin",
+      "Esin Durmus",
+      "Tristan Hume",
+      "Francesco Mosconi",
+      "C. Daniel Freeman",
+      "Theodore R. Sumers",
+      "Edward Rees",
+      "Joshua Batson",
+      "Adam Jermyn",
+      "Shan Carter",
+      "Chris Olah",
+      "Tom Henighan"
+    ],
+    "year": 2024,
+    "pdf_path": null,
+    "url": "https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html",
+    "summary": "This paper resolves the key open question left by Towards Monosemanticity — whether SAEs can scale to large, production-grade language models — by applying dictionary learning to Claude 3 Sonnet, Anthropic's medium-scale production model, and demonstrating high-quality interpretable features at that scale. The problem is that prior SAE work was confined to toy or small models; if SAEs fail qualitatively at scale (due to representation complexity, polysemanticity at the neuron level being more severe, or simply engineering challenges), their safety and interpretability applications would be limited. Key methods include using scaling laws to guide SAE design choices: training smaller SAEs at various compute budgets, measuring interpretability metrics vs. scale, and extrapolating to choose the final SAE configuration. Three SAEs are trained on Claude 3 Sonnet residual stream activations. Main findings: (1) SAEs produce highly interpretable features at scale, with abstract, multilingual, and multimodal features — a single feature fires for a concept across languages (French, Spanish, Chinese) and modalities (text description of a concept plus image). (2) Features exhibit a systematic relationship between concept frequency and dictionary size needed to resolve them — rare concepts require larger dictionaries. (3) Scaling laws govern SAE quality similarly to how they govern LLM quality. (4) Features can be used to steer model behavior, providing a causal interpretability handle. (5) Safety-relevant features are identified covering deception and manipulation, sycophancy, bias, and dangerous content, alongside case studies using features to detect and interrupt deceptive behavior. A key contribution is the neighborhood analysis of feature space — exploring which features are geometrically proximal to each other, revealing coherent semantic clusters. For geometry-of-SAE-artifacts research, this paper's feature neighborhood analysis is directly relevant: it shows that SAE decoder directions are not randomly arranged but form meaningful geometric clusters. Understanding whether this clustering reflects genuine model structure or is an artifact of training dynamics is a central question in SAE geometry research."
+  },
+  {
+    "key": "karvonen2024",
+    "title": "An Intuitive Explanation of Sparse Autoencoders for LLM Interpretability",
+    "authors": [
+      "Adam Karvonen"
+    ],
+    "year": 2024,
+    "pdf_path": null,
+    "url": "https://adamkarvonen.github.io/machine_learning/2024/06/11/sae-intuitions.html",
+    "summary": "This blog post by Adam Karvonen provides an accessible technical introduction to sparse autoencoders as applied to LLM interpretability, filling a gap between high-level popular explanations and dense academic papers. The problem it addresses is that despite growing excitement about SAEs, many researchers and practitioners lack an intuitive understanding of how they work mechanically, why they are expected to produce interpretable features, and how to implement them. Karvonen motivates SAEs through the superposition problem: individual neurons in LLMs correspond to mixtures of unrelated concepts (the canonical example being a neuron responding to academic citations, English dialogue, HTTP requests, and Korean text simultaneously). Superposition emerges because the space of concepts in training data vastly exceeds the number of neurons, but sparsity of concepts allows packed representation. SAEs are presented as a decomposition technique inspired by the sparse coding hypothesis from neuroscience: by training a model to reconstruct activations through a higher-dimensional bottleneck with sparsity constraints, interpretable features emerge as a side effect. The technical walkthrough covers: the encoder-decoder architecture (encoder matrix A ReLU decoder matrix), working through concrete dimensional examples (GPT-3's 12,288-dimensional activations expanded to 49,512 with a 4x expansion factor), the L1 sparsity penalty and its trade-off with reconstruction accuracy, and the crucial practical point that a separate SAE is trained for each location in the model (layer outputs, MLP activations, etc.). Karvonen provides a reference PyTorch implementation and discusses implementation variants. A notable update recommends BatchTopK SAEs over vanilla ReLU SAEs, arguing that TopK approaches (setting exactly k activations nonzero) better control the sparsity-reconstruction trade-off without tuning a continuous coefficient. He also discusses JumpReLU and standard TopK as alternatives. For geometry-of-SAE-artifacts research, the post is valuable context because it makes explicit the geometric intuition underlying SAE training: decoder columns are unit vectors in activation space, and the sparsity constraint forces the encoder to select which of these directions are active for any input. The geometric structure of the decoder matrix — how these unit vectors are arranged angularly relative to each other — determines what features can be disentangled, and pathological geometric configurations (highly correlated decoder directions, privileged directions near the origin) correspond directly to SAE training artifacts like feature duplication and dead latents."
+  }
+]

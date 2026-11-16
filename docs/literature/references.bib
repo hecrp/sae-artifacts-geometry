@@ -1,0 +1,372 @@
+% Bibliography - Geometry of SAE Artifacts Project
+% Last updated: March 2026
+
+% FOUNDATIONAL PAPERS
+
+@article{elhage2022toy,
+  title={Toy Models of Superposition},
+  author={Elhage, Nelson and Hume, Tristan and Olsson, Catherine and Schiefer, Nicholas and Henighan, Tom and Kravec, Shauna and Hatfield-Dodds, Zac and Lasenby, Robert and Drain, Dawn and Chen, Carol and others},
+  journal={Transformer Circuits Thread},
+  year={2022},
+  url={https://transformer-circuits.pub/2022/toy_model/index.html},
+  note={Seminal work establishing superposition hypothesis}
+}
+
+@article{anthropic2023superposition,
+  title={Superposition, Memorization, and Double Descent},
+  author={{Anthropic Mechanistic Interpretability Team}},
+  journal={Transformer Circuits Thread},
+  year={2023},
+  url={https://transformer-circuits.pub/2023/toy-double-descent/index.html},
+  note={Connects superposition with memorization and explains double descent phenomenon}
+}
+
+@article{bricken2023monosemanticity,
+  title={Towards Monosemanticity: Decomposing Language Models with Dictionary Learning},
+  author={Bricken, Trenton and Templeton, Adly and Batson, Joshua and Chen, Brian and Jermyn, Adam and Conerly, Tom and Turner, Nicholas L and Anil, Cem and Denison, Carson and Askell, Amanda and others},
+  journal={Transformer Circuits Thread},
+  year={2023},
+  url={https://transformer-circuits.pub/2023/monosemantic-features/index.html},
+  note={First application of SAEs to real transformers, establishes canonical SAE architecture}
+}
+
+@article{templeton2024scaling,
+  title={Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet},
+  author={Templeton, Adly and Conerly, Tom and Marcus, Jonathan and Lindsey, Jack and Bricken, Trenton and Chen, Brian and Pearce, Adam and Citro, Craig and Ameisen, Emmanuel and Jones, Andy and others},
+  journal={Transformer Circuits Thread},
+  year={2024},
+  url={https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html},
+  note={First application of SAEs to production-scale model (Claude 3), establishes scaling laws}
+}
+
+% ARCHITECTURE AND REPRESENTATION PAPERS
+
+@article{anthropic2022solu,
+  title={Softmax Linear Units},
+  author={{Anthropic Mechanistic Interpretability Team}},
+  journal={Transformer Circuits Thread},
+  year={2022},
+  url={https://transformer-circuits.pub/2022/solu/index.html},
+  note={Activation function designed to improve intrinsic interpretability}
+}
+
+@article{anthropic2023superpositioncomposition,
+  title={Distributed Representations: Composition and Superposition},
+  author={{Anthropic Mechanistic Interpretability Team}},
+  journal={Transformer Circuits Thread},
+  year={2023},
+  url={https://transformer-circuits.pub/2023/superposition-composition/index.html},
+  note={How distributed representations combine through composition}
+}
+
+@article{anthropic2023privilegedbasis,
+  title={Privileged Bases in the Transformer Residual Stream},
+  author={{Anthropic Mechanistic Interpretability Team}},
+  journal={Transformer Circuits Thread},
+  year={2023},
+  url={https://transformer-circuits.pub/2023/privileged-basis/index.html},
+  note={Canonical bases in residual stream; privileged structures exist}
+}
+
+% SAE APPLICATIONS AND EXTENSIONS
+
+@article{anthropic2024crosscoders,
+  title={Sparse Crosscoders for Cross-Layer Features and Model Diffing},
+  author={{Anthropic Mechanistic Interpretability Team}},
+  journal={Transformer Circuits Thread},
+  year={2024},
+  url={https://transformer-circuits.pub/2024/crosscoders/index.html},
+  note={Shared features between models/layers; cross-model comparison}
+}
+
+@article{anthropic2024featuresasclassifiers,
+  title={Using Dictionary Learning Features as Classifiers},
+  author={{Anthropic Mechanistic Interpretability Team}},
+  journal={Transformer Circuits Thread},
+  year={2024},
+  url={https://transformer-circuits.pub/2024/features-as-classifiers/index.html},
+  note={Practical validation of features as linear classifiers}
+}
+
+@article{anthropic2024modeldiffing,
+  title={Stage-Wise Model Diffing},
+  author={{Anthropic Mechanistic Interpretability Team}},
+  journal={Transformer Circuits Thread},
+  year={2024},
+  url={https://transformer-circuits.pub/2024/model-diffing/index.html},
+  note={Comparing model versions; evolution analysis}
+}
+
+% TECHNICAL/METHODOLOGICAL PAPERS
+
+@article{chanin2024absorption,
+  title={A is for Absorption: Studying Feature Splitting and Absorption in Sparse Autoencoders},
+  author={Chanin, David and Wilken-Smith, James and Dulka, Tomas and Bhatnagar, Hardik and Golechha, Satvik and Bloom, Joseph},
+  journal={arXiv preprint arXiv:2409.14507},
+  year={2024}
+}
+
+@article{song2025consistency,
+  title={Position: Mechanistic Interpretability Should Prioritize Feature Consistency in SAEs},
+  author={Song, Adam and Bhatt, Meghana and others},
+  journal={arXiv preprint arXiv:2505.20254},
+  year={2025}
+}
+
+@article{leask2025canonical,
+  title={Sparse Autoencoders Do Not Find Canonical Units of Analysis},
+  author={Leask, Patrick and Bussmann, Bart and Pearce, Michael and Bloom, Joseph and Tigges, Curt and Moubayed, Noura Al and Sharkey, Lee and Nanda, Neel},
+  journal={arXiv preprint arXiv:2502.04878},
+  year={2025}
+}
+
+% SAE ARCHITECTURES AND SCALING
+
+@article{gao2024scaling,
+  title={Scaling and Evaluating Sparse Autoencoders},
+  author={Gao, Leo and la Tour, Tom Dupre and Tillman, Henk and Goh, Gabriel and Troll, Rajan and Radford, Alec and Sutskever, Ilya and Leike, Jan and Wu, Jeffrey},
+  journal={arXiv preprint arXiv:2406.04093},
+  year={2024}
+}
+
+@article{rajamanoharan2024jumprelu,
+  title={Jumping Ahead: Improving Reconstruction Fidelity with JumpReLU Sparse Autoencoders},
+  author={Rajamanoharan, Senthooran and Lieberum, Tom and Sonnerat, Nicolas and Conmy, Arthur and Varma, Vikrant and Kramar, Janos and Nanda, Neel},
+  journal={arXiv preprint arXiv:2407.14435},
+  year={2024}
+}
+
+@article{lieberum2024gemma,
+  title={Gemma Scope: Open Sparse Autoencoders Everywhere All At Once on Gemma 2},
+  author={Lieberum, Tom and Rajamanoharan, Senthooran and Conmy, Arthur and Smith, Lewis and Sonnerat, Nicolas and Varma, Vikrant and Kramar, Janos and Dragan, Anca and Shah, Rohin},
+  journal={arXiv preprint arXiv:2408.05147},
+  year={2024}
+}
+
+@article{he2024llama,
+  title={Llama Scope: Extracting Millions of Features from Llama-3.1-8B with Sparse Autoencoders},
+  author={He, Zhengfu and others},
+  journal={arXiv preprint arXiv:2410.20526},
+  year={2024}
+}
+
+@article{belrose2025different,
+  title={Sparse Autoencoders Trained on the Same Data Learn Different Features},
+  author={Paulo, Goncalo and Belrose, Nora},
+  journal={arXiv preprint arXiv:2501.16615},
+  year={2025}
+}
+
+@article{peter2025matryoshka,
+  title={Learning Multi-Level Features with Matryoshka Sparse Autoencoders},
+  author={Peter, J and others},
+  journal={arXiv preprint arXiv:2503.17547},
+  year={2025}
+}
+
+% BLOG POSTS AND TUTORIALS
+
+@online{karvonen2024intuitive,
+  title={An Intuitive Explanation of Sparse Autoencoders for LLM Interpretability},
+  author={Karvonen, Adam},
+  year={2024},
+  url={https://adamkarvonen.github.io/machine_learning/2024/06/11/sae-intuitions.html}
+}
+
+@online{smith2025negative,
+  title={Negative Results for Sparse Autoencoders on Downstream Tasks},
+  author={Smith, Lewis and Rajamanoharan, Senthooran and Conmy, Arthur and others},
+  organization={Google DeepMind},
+  year={2025}
+}
+
+% RELATED WORK
+
+@article{bloom2024gpt2sae,
+  title={GPT-2 Small Sparse Autoencoders},
+  author={Bloom, Joseph and others},
+  organization={Hugging Face},
+  year={2024},
+  note={Pre-trained SAEs used in this project}
+}
+
+@online{features2024neuronpedia,
+  title={Neuronpedia},
+  url={https://www.neuronpedia.org},
+  year={2024}
+}
+
+% GOODFIRE / NEURAL GEOMETRY / FEATURE MANIFOLDS (added May 2026)
+
+@misc{geiger2026worldinside,
+  title        = {The World Inside Neural Networks},
+  author       = {Geiger, Atticus and Lubana, Ekdeep Singh and Fel, Thomas and Merullo, Jack and Byun, Michael Jae and Lewis, Owen and McGrath, Tom},
+  year         = {2026},
+  howpublished = {Goodfire Research},
+  url          = {https://www.goodfire.ai/research/the-world-inside-neural-networks},
+  note         = {Neural Geometry Series; published May 7, 2026}
+}
+
+@misc{goodfire2026neuralgeometry,
+  title        = {The Neural Geometry Series},
+  author       = {{Goodfire Research}},
+  year         = {2026},
+  howpublished = {Goodfire Research},
+  url          = {https://www.goodfire.ai/research/neural-geometry}
+}
+
+@misc{wurgaft2026manifoldsteering,
+  title         = {Manifold Steering Reveals the Shared Geometry of Neural Network Representation and Behavior},
+  author        = {Wurgaft, Daniel and Rager, Can and Kowal, Matthew and Shyam, Vasudev and Feucht, Sheridan and Bhalla, Usha and Haklay, Tal and Bigelow, Eric and Sarfati, Raphael and McGrath, Thomas and Lewis, Owen and Merullo, Jack and Goodman, Noah D. and Fel, Thomas and Geiger, Atticus and Lubana, Ekdeep Singh and others},
+  year          = {2026},
+  eprint        = {2605.05115},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  url           = {https://arxiv.org/abs/2605.05115},
+  note          = {Goodfire post: https://www.goodfire.ai/research/manifold-steering}
+}
+
+@misc{pearce2025treeoflife,
+  title        = {Finding the Tree of Life in Evo 2},
+  author       = {Pearce, Michael and Simon, Elana and Byun, Michael and Balsam, Daniel},
+  year         = {2025},
+  howpublished = {Goodfire Research},
+  url          = {https://www.goodfire.ai/research/phylogeny-manifold}
+}
+
+@misc{wang2026alzheimers,
+  title        = {Using Interpretability to Identify a Novel Class of Alzheimer's Biomarkers},
+  author       = {Wang, Nicholas and Fang, Ching and Bissell, Mark and Hazra, Dron and Pearce, Michael and Jain, Archa and Balsam, Daniel and others},
+  year         = {2026},
+  howpublished = {Goodfire Research},
+  url          = {https://www.goodfire.ai/research/interpretability-for-alzheimers-detection}
+}
+
+@inproceedings{engels2024multidimensional,
+  title         = {Not All Language Model Features Are One-Dimensionally Linear},
+  author        = {Engels, Joshua and Michaud, Eric J. and Liao, Isaac and Gurnee, Wes and Tegmark, Max},
+  booktitle     = {Advances in Neural Information Processing Systems},
+  year          = {2024},
+  eprint        = {2405.14860},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  url           = {https://arxiv.org/abs/2405.14860}
+}
+
+@misc{modell2025origins,
+  title         = {The Origins of Representation Manifolds in Large Language Models},
+  author        = {Modell, Alexander and Rubin-Delanchy, Patrick and Whiteley, Nick},
+  year          = {2025},
+  eprint        = {2505.18235},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  url           = {https://arxiv.org/abs/2505.18235}
+}
+
+@misc{karkada2026symmetry,
+  title         = {Symmetry in Language Statistics Shapes the Geometry of Model Representations},
+  author        = {Karkada, Dhruva and Korchinski, Daniel J. and Nava, Andres and Wyart, Matthieu and Bahri, Yasaman},
+  year          = {2026},
+  eprint        = {2602.15029},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  url           = {https://arxiv.org/abs/2602.15029}
+}
+
+@misc{prieto2026correlations,
+  title         = {From Data Statistics to Feature Geometry: How Correlations Shape Superposition},
+  author        = {Prieto, Lucas and Stevinson, Edward and Barsbey, Melih and Birdal, Tolga and Mediano, Pedro A. M.},
+  year          = {2026},
+  eprint        = {2603.09972},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  url           = {https://arxiv.org/abs/2603.09972}
+}
+
+@misc{shafran2026regions,
+  title         = {From Directions to Regions: Decomposing Activations in Language Models via Local Geometry},
+  author        = {Shafran, Or and Ronen, Shaked and Fahn, Omri and Ravfogel, Shauli and Geiger, Atticus and Geva, Mor},
+  year          = {2026},
+  eprint        = {2602.02464},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  url           = {https://arxiv.org/abs/2602.02464}
+}
+
+@misc{hindupur2025projecting,
+  title         = {Projecting Assumptions: The Duality Between Sparse Autoencoders and Concept Geometry},
+  author        = {Hindupur, Sai Sumedh R. and Lubana, Ekdeep Singh and Fel, Thomas and Ba, Demba},
+  year          = {2025},
+  eprint        = {2503.01822},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  url           = {https://arxiv.org/abs/2503.01822}
+}
+
+@misc{menon2024formal,
+  title         = {Analyzing (In)Abilities of SAEs via Formal Languages},
+  author        = {Menon, Abhinav and Shrivastava, Manish and Krueger, David and Lubana, Ekdeep Singh},
+  year          = {2024},
+  eprint        = {2410.11767},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  url           = {https://arxiv.org/abs/2410.11767}
+}
+
+@misc{muchane2025hierarchical,
+  title         = {Incorporating Hierarchical Semantics in Sparse Autoencoder Architectures},
+  author        = {Muchane, Mark and Richardson, Sean and Park, Kiho and Veitch, Victor},
+  year          = {2025},
+  eprint        = {2506.01197},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  url           = {https://arxiv.org/abs/2506.01197}
+}
+
+@misc{kantamneni2025trigonometry,
+  title         = {Language Models Use Trigonometry to Do Addition},
+  author        = {Kantamneni, Subhash and Tegmark, Max},
+  year          = {2025},
+  eprint        = {2502.00873},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.AI},
+  url           = {https://arxiv.org/abs/2502.00873}
+}
+
+@misc{levy2024digits,
+  title         = {Language Models Encode Numbers Using Digit Representations in Base 10},
+  author        = {Levy, Amit Arnold and Geva, Mor},
+  year          = {2024},
+  eprint        = {2410.11781},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  url           = {https://arxiv.org/abs/2410.11781}
+}
+
+@misc{fu2026convergent,
+  title         = {Convergent Evolution: How Different Language Models Learn Similar Number Representations},
+  author        = {Fu, Deqing and Zhou, Tianyi and Belkin, Mikhail and Sharan, Vatsal and Jia, Robin},
+  year          = {2026},
+  eprint        = {2604.20817},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  url           = {https://arxiv.org/abs/2604.20817}
+}
+
+@misc{cunningham2023sae,
+  title         = {Sparse Autoencoders Find Highly Interpretable Features in Language Models},
+  author        = {Cunningham, Hoagy and Ewart, Aidan and Riggs, Logan and Huben, Robert and Sharkey, Lee},
+  year          = {2023},
+  eprint        = {2309.08600},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  url           = {https://arxiv.org/abs/2309.08600}
+}
+
+@misc{bloom2024gpt2,
+  title        = {GPT2-Small-SAEs},
+  author       = {Bloom, Joseph},
+  year         = {2024},
+  howpublished = {Hugging Face model collection},
+  url          = {https://huggingface.co/jbloom/GPT2-Small-SAEs}
+}

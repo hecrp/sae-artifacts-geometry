@@ -1,0 +1,364 @@
+% ============================================================
+% SUPPLEMENT 5: Goodfire / Neural Geometry Integration
+% The Geometry of SAE Artifacts Research Program
+% May 2026
+% ============================================================
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{natbib}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{tcolorbox}
+\usepackage{colortbl}
+
+\graphicspath{{../}{../figures/}}
+\hypersetup{colorlinks=true,linkcolor=blue!60!black,citecolor=blue!60!black,urlcolor=blue!60!black}
+
+\newtcolorbox{keyinsight}{colback=blue!5!white,colframe=blue!50!black,title=Idea clave,fonttitle=\bfseries}
+\newtcolorbox{finding}[1]{colback=green!5!white,colframe=green!50!black,title=#1,fonttitle=\bfseries}
+\newtcolorbox{warningbox}{colback=orange!5!white,colframe=orange!70!black,title=Advertencia,fonttitle=\bfseries}
+\newtcolorbox{hypobox}[1]{colback=purple!5!white,colframe=purple!50!black,title=#1,fonttitle=\bfseries}
+\newtcolorbox{protocolbox}[1]{colback=gray!5!white,colframe=gray!50!black,title=#1,fonttitle=\bfseries}
+
+\newtheorem{definition}{Definicion}
+\newtheorem{hypothesis}{Hypothesis}
+\newtheorem{proposition}{Proposicion}
+
+\setlength{\parskip}{0.4em}
+\setlength{\parindent}{1.2em}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\small\textit{Supplement 5: Goodfire / Neural Geometry}}
+\lhead{\small\textit{Geometry of SAE Artifacts --- May 2026}}
+\cfoot{\thepage}
+
+\newcommand{\cosED}{\cos(E_i,D_i)}
+\newcommand{\Ef}{E_f}
+\newcommand{\Df}{D_f}
+\newcommand{\Mh}{\mathcal{M}_h}
+\newcommand{\My}{\mathcal{M}_y}
+\newcommand{\Acal}{\mathcal{A}}
+\newcommand{\Bcal}{\mathcal{B}}
+\newcommand{\Hellinger}{d_{\mathrm{H}}}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+\title{\Large\bfseries Supplement 5 Report: Goodfire Neural Geometry Integration\\[0.4em]
+\large The Geometry of SAE Artifacts Research Program\\[0.3em]
+\normalsize From Sparse Linear Features to Representation Manifolds, SAE Shattering, and Manifold-Aware Control}
+\author{\textit{Working Report --- May 2026}\\[0.3em]
+\small Integrating Goodfire's \emph{The World Inside Neural Networks} and recent manifold literature}
+\date{}
+
+\begin{document}
+\maketitle
+\thispagestyle{fancy}
+
+\begin{abstract}
+\noindent This supplement integrates the Goodfire Neural Geometry program, especially \emph{The World Inside Neural Networks}~\citep{geiger2026worldinside} and the associated manifold-steering paper~\citep{wurgaft2026manifoldsteering}, into the Geometry of SAE Artifacts research program. The central update is conceptual: Sparse Autoencoder (SAE) features should not be treated as the final ontology of a model. Many model-internal concepts are better described as structured geometric objects---curves, circles, helices, regions, subspaces, hierarchies, or manifolds---whose local linear pieces may be fragmented by an SAE dictionary into many apparently unrelated features.
+
+We introduce a new hypothesis, \textbf{H7: Manifold Fragmentation / SAE Shattering}. H7 does not replace the already-supported geometric hedge mechanism from Phase~2 and Supplement~3; instead it explains how local anti-aligned features can arise as corrective shards of a higher-dimensional representation manifold. This reframes anti-alignment, the F1803 temporal manifold, and Neuronpedia logit inversion as instances of a broader neural-geometry problem: the mismatch between curved representation geometry and global sparse linear dictionaries.
+
+This document is explicitly non-retroactive. It does not reopen closed gate decisions G0--G2 or revise the empirical claims of Supplements~3--4. It provides a theory bridge, a literature update, and a concrete experimental protocol for Supplement~5 and later Phase~3--5 work.
+\end{abstract}
+
+\medskip\noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small \textbf{Correction (November 2026).} This report cited results from the March~2026 version of Supplement~4, which has been withdrawn and replaced. In particular, the ``active anti-aligned features'' it mentioned were randomly selected layer-8 features with ordinary encoder--decoder alignment, and the revised Supplement~4 finds that every strongly anti-aligned GPT-2 feature queried is dead or nearly dead. The affected statements below have been revised. See \texttt{docs/ERRATA.md} (E6, E7) in the repository.}}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+\tableofcontents
+\newpage
+
+\section{Non-Retroactivity and Source Corpus}
+\label{sec:nonretro}
+
+\begin{warningbox}
+This supplement updates the \emph{interpretive frame} of the project, not the historical record of completed phases. PHASE0, PHASE1, PHASE2, SUPPLEMENT3, and SUPPLEMENT4 remain closed reports. Their results should be cited as measured. New neural-geometry claims belong in this supplement and in future experiments.
+\end{warningbox}
+
+The source corpus consisted of locally extracted text from the following Goodfire pages (not redistributed with this repository):
+\begin{itemize}[noitemsep]
+  \item \texttt{goodfire\_world\_inside\_neural\_networks\_extracted.txt}
+  \item \texttt{manifold\_steering\_extracted.txt}
+  \item \texttt{neural\_geometry\_series\_extracted.txt}
+  \item \texttt{phylogeny\_manifold\_extracted.txt}
+  \item \texttt{alzheimers\_detection\_extracted.txt}
+\end{itemize}
+
+The primary link requested for integration is:
+\begin{center}
+\url{https://www.goodfire.ai/research/the-world-inside-neural-networks}
+\end{center}
+It was published as part of Goodfire's Neural Geometry Series in May~2026.
+
+\section{The Goodfire Neural Geometry Framework}
+\label{sec:goodfire}
+
+\subsection{Core Claim}
+
+Goodfire's central claim is that neural networks learn structured inner worlds. These inner worlds are not merely collections of isolated linear directions; they contain geometric structures that recapitulate the structure of the external world represented in the training data. Examples include cyclic calendar structures, number helices, smooth historical-year curves, color surfaces, spatial layouts, phylogenetic trees, and biomedical manifolds~\citep{geiger2026worldinside,pearce2025treeoflife,wang2026alzheimers}.
+
+\begin{keyinsight}
+The key shift is from \emph{feature ontology} to \emph{geometric ontology}. A concept may be a point, a direction, a curve, a circle, a helix, a region, a graph, a hierarchy, or a manifold. A single SAE latent is one possible local coordinate, not necessarily the concept itself.
+\end{keyinsight}
+
+Goodfire frames interpretability across three coupled levels:
+\begin{enumerate}[noitemsep]
+  \item \textbf{Representations}: geometric data structures in activation space.
+  \item \textbf{Computations}: transformations that consume and produce those structures.
+  \item \textbf{Behavior}: output distributions or actions generated from those computations.
+\end{enumerate}
+In this framing, representation geometry is analogous to a model's internal data structure. Understanding a computation without understanding the representation it operates on is incomplete.
+
+\subsection{Representation and Behavior Manifolds}
+
+Let $\Acal_\ell \subset \mathbb{R}^{d}$ denote the activation space at layer $\ell$. A concept $c$ may occupy a low-dimensional submanifold
+\[
+  \Mh(c) \subset \Acal_\ell.
+\]
+For language models, the behavior space can be treated as a probability simplex over vocabulary distributions:
+\[
+  \Bcal \subset \Delta^{|V|-1}.
+\]
+Goodfire's manifold-steering work defines a corresponding behavior manifold $\My(c) \subset \Bcal$ and studies whether causal interventions along $\Mh(c)$ induce natural trajectories along $\My(c)$~\citep{wurgaft2026manifoldsteering}.
+
+For output distributions $p$ and $q$, the behavior geometry can be measured with the Hellinger distance:
+\[
+  \Hellinger(p,q) = \frac{1}{\sqrt{2}}\left\|\sqrt{p}-\sqrt{q}\right\|_2.
+\]
+
+\subsection{Linear Steering as a Local Approximation}
+
+Conventional activation steering uses a vector
+\[
+  h'_\ell = h_\ell + \alpha v,
+\]
+where $v$ is often a difference of means between positive and negative examples. Goodfire argues that this works when the concept geometry is locally flat or globally linear. If the concept is curved, a straight chord can leave the natural activation manifold and produce incoherent behavior.
+
+Manifold steering replaces the straight-line intervention with a path
+\[
+  \gamma(t) \in \Mh(c),
+\]
+and evaluates whether
+\[
+  F_\ell(\gamma(t)) \approx \eta(t), \qquad \eta(t) \in \My(c),
+\]
+where $F_\ell(h)=p_\theta(\cdot \mid do(h_\ell=h))$ is the causal activation-to-behavior map.
+
+\section{Why This Matters for SAEs}
+\label{sec:sae}
+
+\subsection{The SAE Shattering Problem}
+
+Goodfire explicitly notes that SAEs can fragment a smooth manifold into many local, apparently unrelated features. In their rhyming example, an unsupervised manifold captures phonological endings as a smooth structure; SAE auto-interpretability labels instead identify local fragments that miss the global concept~\citep{geiger2026worldinside}.
+
+\begin{definition}[SAE manifold shattering]
+An SAE shatters a concept manifold $\Mh(c)$ when the global concept is represented not by a single latent, but by a collection of local latents $\{f_1,\ldots,f_k\}$ whose activation regions cover patches of $\Mh(c)$ while obscuring the manifold's topology or intrinsic coordinates.
+\end{definition}
+
+This is not a claim that SAEs are useless. Rather, SAEs are useful probes with architectural priors. The danger is treating the SAE dictionary as the model's true ontology.
+
+\subsection{Architectural Priors Are Geometric Priors}
+
+Recent work makes this point precise. \citet{hindupur2025projecting} argue that each SAE architecture projects assumptions about concept geometry: linear separability, sparsity, homogeneity of intrinsic dimension, and global dictionary structure. \citet{menon2024formal} show in formal-language settings that SAE latents can be interpretable but not causally faithful. \citet{muchane2025hierarchical} introduce hierarchical SAE variants to represent semantic relationships explicitly.
+
+Thus, the current project should distinguish:
+\begin{itemize}[noitemsep]
+  \item \textbf{Model geometry}: the actual representation structure learned by the transformer.
+  \item \textbf{SAE geometry}: the geometry imposed by the dictionary learning objective.
+  \item \textbf{Analysis geometry}: the geometry visible through PCA, UMAP, kNN graphs, local factor models, or manifold fitting.
+\end{itemize}
+
+\section{Updated Literature Map}
+\label{sec:lit}
+
+\begin{longtable}{@{}p{3.2cm}p{5.2cm}p{6.2cm}@{}}
+\caption{Recent literature relevant to the Goodfire update.}\\
+\toprule
+\textbf{Work} & \textbf{Contribution} & \textbf{Impact on this project}\\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Work} & \textbf{Contribution} & \textbf{Impact on this project}\\
+\midrule
+\endhead
+\citet{engels2024multidimensional} & Multidimensional language-model features; days and months as circles; causal tests of circular features. & F1803 and temporal features should be treated as possible manifolds, not just directions.\\
+\citet{modell2025origins} & Formalizes representation manifolds as metric/topological objects and studies their origins. & Provides language for intrinsic dimension, topology, geodesic distance, and concept metrics.\\
+\citet{karkada2026symmetry} & Shows that symmetries in language statistics shape representation geometry. & Suggests temporal manifolds arise from co-occurrence symmetries and latent world structure.\\
+\citet{prieto2026correlations} & Shows that correlations shape superposition; interference can be constructive. & Reframes SAE artifacts as interaction between data correlations and compression geometry.\\
+\citet{wurgaft2026manifoldsteering} & Demonstrates that steering along representation manifolds yields natural behavior trajectories. & Provides an experimental template for F1803 and anti-aligned-feature steering.\\
+\citet{shafran2026regions} & Replaces global directions with local regions using Mixture of Factor Analyzers. & Strong baseline for local-geometry analysis of anti-aligned neighborhoods.\\
+\citet{hindupur2025projecting} & SAE architectures impose assumptions about concept geometry. & Supports the claim that anti-alignment is architecture-conditioned projection geometry.\\
+\citet{menon2024formal} & SAE latents can be interpretable but not causally faithful in formal languages. & Reinforces causal validation as a requirement before mechanistic claims.\\
+\citet{muchane2025hierarchical} & Hierarchical SAEs encode semantic hierarchy explicitly. & Distinguishes pathological shattering from useful hierarchical decomposition.\\
+\citet{kantamneni2025trigonometry} & Addition uses helical/trigonometric number representations. & Shows manifolds can be computational substrates, not just visualizations.\\
+\citet{levy2024digits} & Numbers represented via base-10 circular digit structures. & Suggests temporal/numeric features may be product manifolds or periodic coordinates.\\
+\citet{fu2026convergent} & Distinguishes spectral similarity from functional geometric separability. & Warns that visible geometry must be tested causally before being called a mechanism.\\
+\bottomrule
+\end{longtable}
+
+\section{Integration With Existing Results}
+\label{sec:integration}
+
+\subsection{Phase 0--2 and Supplements 3--4}
+
+The completed project phases established the following:
+\begin{itemize}[noitemsep]
+  \item \textbf{Phase 0--1}: anti-aligned features exist cross-model and are distributionally structured.
+  \item \textbf{Phase 2}: anti-alignment appears even with $\lambda=0$ and under TopK/JumpReLU variants, supporting a geometric origin rather than a pure L1 artifact.
+  \item \textbf{Supplement 3}: real GPT-2 L8 features pass a bisector/hedge test; anti-alignment has a phase transition around $5$--$6\times$ expansion, and at $32\times$ the toy model matches the real anti-aligned count.
+  \item \textbf{Supplement 4 (revised)}: hedge and parent decoders are nearly antiparallel, so their logit effects are inverted; all strongly anti-aligned GPT-2 features queried, and their parents, are dead or nearly dead. The only active anti-aligned feature found is Gemma~2B F3378.
+\end{itemize}
+
+Goodfire does not invalidate these results. It adds an interpretive layer: the ``hedge'' may be a local linear correction created when an SAE dictionary approximates a curved or multidimensional representation with sparse linear shards.
+
+\subsection{F1803 as the Most Direct Bridge}
+
+The F1803 temporal-specificity project is the strongest bridge between the current project and neural geometry. Prior measurements found:
+\begin{itemize}[noitemsep]
+  \item F1803 acts as a temporal specificity gate for post-2019 year contexts.
+  \item The temporal representation is not a simple 1D line; PCA over temporal prompts gave a high $\mathrm{PC2}/\mathrm{PC1}$ ratio ($0.87$), consistent with a multidimensional manifold.
+  \item The 2023 anomaly was explained by GPT-2 BPE tokenization: `` 2023'' decomposes as `` 20'' + ``23'', while `` 2024'' is a dedicated token.
+  \item L0\_MLP behaves as a multichannel router rather than a universal hub.
+\end{itemize}
+
+Under the Goodfire framing, F1803 should be analyzed as a local coordinate or shard of a temporal manifold. The key question becomes: what is the intrinsic topology and metric of the temporal representation, and how does F1803 sit relative to its tangent and normal directions?
+
+\subsection{Neuronpedia Logit Inversion as Local Geometry}
+
+Supplement~4 found strong logit inversion between hedge and parent features, which follows from their nearly antiparallel decoders. In the old framing, this geometry is read as subtractive hedging; note that the GPT-2 hedges and parents examined are dead on Neuronpedia's activation sample, so the corrective role is a description of the weights, not of observed inference-time behaviour. In the neural-geometry framing, it can be interpreted more generally as a local corrective chart: the anti-aligned feature detects entry into a region of representation space and writes a vector that keeps the reconstruction on or near the learned manifold.
+
+\begin{keyinsight}
+Anti-alignment may be a \emph{local normal correction}: the encoder detects a region or parent cluster; the decoder writes a displacement that cancels a local off-manifold or over-represented component. This is compatible with the hedge-family mechanism but embeds it in a richer manifold view.
+\end{keyinsight}
+
+\section{New Hypothesis H7}
+\label{sec:h7}
+
+\begin{hypobox}{H7: Manifold Fragmentation / SAE Shattering}
+Anti-aligned SAE features are sometimes local linear shards of a curved or multidimensional concept manifold. The SAE objective, especially at large expansion ratios, decomposes the manifold into sparse dictionary elements. Some shards become corrective: their encoder detects a local region or parent cluster, while their decoder writes an opposing vector that keeps reconstruction consistent with the global manifold.
+\end{hypobox}
+
+H7 predicts:
+\begin{enumerate}[noitemsep]
+  \item Anti-aligned features should lie in dense decoder-neighborhoods or coactivation neighborhoods rather than being isolated random outliers.
+  \item For a concept with known topology, anti-aligned features should occupy high-curvature or transition regions of the reconstructed manifold.
+  \item The chord distance between feature shards should underestimate geodesic distance when the concept is curved.
+  \item Local PCA or factor analysis around anti-aligned neighborhoods should reveal dimension greater than one.
+  \item Linear steering through anti-aligned-feature directions should be less natural than manifold-aware steering along local tangent directions.
+  \item Architectures with explicit hierarchy or local regions should reduce apparent shattering while preserving the concept's global geometry.
+\end{enumerate}
+
+H7 differs from existing hypotheses as follows:
+\begin{itemize}[noitemsep]
+  \item H1 (Subtractive Hedges) is a local mechanism; H7 is a global geometric setting in which H1 can occur.
+  \item H2 (Dead Feature Decay) predicts low activation and little structure; H7 predicts structured neighborhoods even when some shards are dead.
+  \item H3/H5 (Superposition/Compositionality) predict distributed structure; H7 specifies that the distributed structure may be a manifold with intrinsic topology.
+  \item H4 (Ghost Gradients) is an optimization-dynamics explanation; H7 can operate without ghost gradients.
+\end{itemize}
+
+\section{Supplement 5 Experimental Protocol}
+\label{sec:protocol}
+
+\subsection{S5A: Geodesic-vs-Chord Test}
+
+Construct kNN graphs over decoder directions, encoder directions, and activation-pattern similarities for a target family (e.g. F19139/F18573/F11969 plus parents; F1803 temporal cluster). Compare:
+\[
+  \rho_{\mathrm{geo/chord}}(i,j)=\frac{d_{\mathrm{graph}}(i,j)}{\|D_i-D_j\|_2}.
+\]
+Large ratios indicate curved or non-convex geometry where straight-line interpolation is misleading.
+
+\subsection{S5B: Local Tangent/Normal Decomposition}
+
+For a target feature $f$, collect nearest neighbors $N_k(f)$ by decoder cosine, encoder-to-decoder similarity, and coactivation. Fit local PCA to their activations or decoder vectors. Decompose $E_f$ and $D_f$ into tangent and normal components:
+\[
+  E_f = E_f^{\parallel}+E_f^{\perp}, \qquad D_f = D_f^{\parallel}+D_f^{\perp}.
+\]
+H7 predicts anti-alignment may concentrate in the normal component even when tangent components remain semantically coherent.
+
+\subsection{S5C: SAE Shard Reconstruction}
+
+Given a conceptual trajectory (years, months, weekdays, rhymes, or temporal prompts), identify active SAE features and test whether the active-feature graph forms a path, cycle, surface, or branching structure. Compute:
+\begin{itemize}[noitemsep]
+  \item intrinsic dimension via local PCA / participation ratio;
+  \item continuity of active feature sets along the conceptual variable;
+  \item whether auto-interp labels are local while the global graph is semantically coherent.
+\end{itemize}
+
+\subsection{S5D: Manifold Steering vs Linear Steering}
+
+For F1803 or a controlled calendar concept, compare:
+\begin{enumerate}[noitemsep]
+  \item linear steering along a single decoder or contrast vector;
+  \item tangent steering along a fitted local manifold;
+  \item geodesic steering along a kNN graph or spline fit.
+\end{enumerate}
+Metrics should include target-token probability, off-target probability, Hellinger distance to natural behavior trajectories, and distance to natural activations.
+
+\subsection{S5E: Alternative Decompositions}
+
+Compare SAEs against local-region methods such as Mixture of Factor Analyzers~\citep{shafran2026regions}, hierarchical SAEs~\citep{muchane2025hierarchical}, or geometry-aware variants such as SpaDE-style architectures~\citep{hindupur2025projecting}. The goal is not to replace SAEs, but to diagnose what SAEs miss.
+
+\section{Implications for Future Phases}
+\label{sec:future}
+
+\subsection{Phase 3: Seed Stability}
+
+Seed stability should track not only exact feature identity, but also neighborhood identity. If a specific anti-aligned feature changes across seeds while the same local manifold region and parent cluster persist, the correct conclusion is not ``unstable artifact'' but ``stable geometric region with seed-dependent discretization.''
+
+\subsection{Phase 4: Coactivation Case Studies}
+
+Coactivation should be analyzed as a graph or manifold, not merely as pairwise parent-child PMI. H7 predicts families of shards with smooth transitions, local neighborhoods, and possible tangent/normal decomposition.
+
+\subsection{Phase 5: Architectural Comparison}
+
+Architectural comparison should ask: which SAE architectures fragment manifolds, which preserve hierarchy, and which recover local charts? Expansion ratio, threshold type, and sparsity mechanism should be interpreted as geometric priors.
+
+\section{Limitations}
+\label{sec:limitations}
+
+\begin{warningbox}
+Goodfire's framing is highly relevant and current, but not direct evidence about the Bloom GPT-2 SAE unless we run the proposed tests. This supplement therefore records a theory update and experimental agenda, not a completed empirical confirmation of H7.
+\end{warningbox}
+
+Additional caveats:
+\begin{itemize}[noitemsep]
+  \item Many 2026 references are recent arXiv preprints and should be treated as developing literature.
+  \item Low-dimensional plots can mislead; every manifold claim should be paired with causal or metric validation.
+  \item Manifold steering provides local control evidence, not global alignment guarantees.
+  \item SAE shattering can be pathological or useful: hierarchical decomposition may intentionally break a concept into meaningful levels.
+  \item All strongly anti-aligned GPT-2 features examined so far are dead or near-dead (Supplement~4); H7 must account for this inactive population, and the single active example found (Gemma~2B F3378) before generalising.
+\end{itemize}
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+The Goodfire Neural Geometry framework strengthens the central direction of this research program. Phase~2 and Supplement~3 already showed that anti-alignment is geometric rather than a pure L1 artifact. Goodfire and the 2024--2026 manifold literature show why this is not an isolated oddity: neural representations often organize as curved, structured objects, and sparse linear dictionaries can fragment those objects into local shards.
+
+The immediate conceptual update is therefore:
+\begin{quote}
+\emph{SAE artifacts are not merely failures of dictionary learning; they are diagnostic traces of the mismatch between sparse linear decompositions and the richer geometry of model representations.}
+\end{quote}
+
+The next empirical step is to test H7 with geodesic, local-PCA, shard-reconstruction, and manifold-steering experiments. If confirmed, this will connect the project's anti-alignment results to a broader theory of how neural networks represent and compute over the world inside their activations.
+
+\newpage
+\bibliographystyle{plainnat}
+\bibliography{goodfire_neural_geometry}
+
+\end{document}

@@ -1,0 +1,27 @@
+neuronpedia_group,model,layer,feature,cos_ED,sigma,anti_aligned_6sigma,frac_nonzero,explanation
+gpt2_hedge_family,gpt2,8,19139,-0.5255,-11.38,True,3.178914388020833e-07,words related to legal or criminal actions
+gpt2_hedge_family,gpt2,8,18573,-0.4209,-10.05,True,0.0,
+gpt2_hedge_family,gpt2,8,11969,-0.2857,-8.33,True,0.0,
+gpt2_hedge_family,gpt2,8,20804,-0.1301,-6.35,True,0.0,
+gpt2_parents,gpt2,8,17487,0.8217,5.77,False,0.0,
+gpt2_parents,gpt2,8,21174,0.6053,3.02,False,0.0,
+gpt2_parents,gpt2,8,16152,0.4832,1.46,False,0.0,
+gpt2_extreme,gpt2,9,18298,-0.736,-13.94,True,0.0,
+gpt2_extreme,gpt2,10,19679,-0.6841,-13.92,True,0.0,
+gpt2_extreme,gpt2,10,3268,-0.5729,-12.45,True,0.0,
+gpt2_extreme,gpt2,11,4855,0.3279,-0.28,False,0.0003509521484375, mentions of speed or quick progress
+gpt2_extreme,gpt2,4,18458,0.3541,0.08,False,0.0001026789347330729,instances where a person is interacting with or talking about strangers
+gpt2_extreme,gpt2,6,7685,0.3714,0.03,False,0.0001468658447265625,"the word ""Mir"" frequently appearing in the text"
+gpt2_extreme,gpt2,7,21750,0.4496,0.89,False,0.0005098978678385416,phrases related to the maintenance or upkeep of certain entities or properties
+gpt2_controls,gpt2,8,1803,0.3016,-0.85,False,0.0003646214803059896,years related to future predictions or targets
+gpt2_controls,gpt2,8,1442,0.3126,-0.71,False,0.0002895991007486979,"locations or cities specifically denoted as ""capital"" in the text"
+gpt2_controls,gpt2,8,10666,0.2341,-1.71,False,0.0006621678670247396,expressions of admiration or appreciation
+gpt2_extra_l8,gpt2,8,5977,0.3717,0.04,False,0.0003449122111002604,"instances of the word ""pent"" along with related words or phrases"
+gpt2_extra_l8,gpt2,8,22561,0.3467,-0.27,False,0.001110712687174479,"references to a specific individual named ""Soros"""
+gpt2_extra_l8,gpt2,8,6165,0.4374,0.88,False,0.00091552734375,"proper nouns, specifically the surname ""Walsh"""
+gpt2_extra_l8,gpt2,8,3696,0.3315,-0.47,False,0.0002768834431966146,"mentions of the name ""Dem"" followed by other characters or words"
+llama_extreme,llama,1,27745,-0.6458,-8.66,True,,
+llama_extreme,llama,1,24381,-0.6143,-8.4,True,,
+llama_extreme,llama,0,15649,0.2382,-1.27,False,,
+llama_extreme,llama,2,30420,0.3795,-0.26,False,,
+gemma_single,gemma,1,3378,-0.4652,-8.5,True,0.01731,references to software libraries and coding frameworks

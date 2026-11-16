@@ -1,0 +1,7 @@
+{
+  "gemma9b_early_min_cos": 0.16365426778793335,
+  "gemma9b_has_abs_antialign": false,
+  "llama32x_l0_6sig": 35,
+  "llama32x_l1_6sig": 172,
+  "llama32x_l1_gate": "G1-NO"
+}
